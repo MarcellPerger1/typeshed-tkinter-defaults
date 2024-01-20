@@ -1,6 +1,7 @@
 import json
 import sys
 import tkinter
+import _tkinter as tk_internal
 import inspect
 from typing import TextIO
 
@@ -84,15 +85,23 @@ ALLOWED_JSON_TYPES = (int, float, str, dict, list, tuple, bool, type(None))
 def make_value_serializable(v: object):
     if isinstance(v, ALLOWED_JSON_TYPES):
         return v
-    # TODO handle _tkinter.Tcl_Obj (use .string / .type property)
+    if isinstance(v, tk_internal.Tcl_Obj):
+        return f'@Tcl_Obj: type={v.typename}, value={v.string}'
+    return f'@repr:{repr(v)}'
 
 
 def transform_to_serializable(defaults_o: dict[str, dict]):
     def tform_one(o: dict[str, object]) -> dict[str, object]:
-        return {key: (value if isinstance(value, ALLOWED_JSON_TYPES)
-                      else '@repr:' + repr(value)) for key, value in o.items()}
+        return {key: make_value_serializable(value) for key, value in o.items()}
 
     return {key: tform_one(value) for key, value in defaults_o.items()}
+
+
+def defaults_str(defaults: dict[str, dict] = None):
+    if defaults is None:
+        defaults = get_defaults()
+    defaults_safe = transform_to_serializable(defaults)
+    return json.dumps(defaults_safe, indent=4, sort_keys=True)
 
 
 def write_defaults(file: TextIO, defaults: dict[str, dict] = None):
