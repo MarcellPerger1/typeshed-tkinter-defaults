@@ -38,7 +38,7 @@ jobs:
         name: "tkinter_defaults__${{ matrix.os }}_${{ matrix.python-version }}"
         path: "tkinter_defaults_curr.json"
     - name: Commit build
-      if: ${{ matrix.os == "ubuntu-latest" && matrix.python-version == "3.11" }}
+      if: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' }}
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: Upload defaults
