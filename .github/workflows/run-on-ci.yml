@@ -30,10 +30,12 @@ jobs:
       shell: bash
       if: ${{ startswith(matrix.os, 'ubuntu-') }}
       run: sudo apt-get install -y xvfb
-    - name: (MacOS) Fix tcl-tk versions
+    - name: (MacOS) Install good tcl-tk
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') }}
-      run: brew install tcl-tk
+      run: |
+        brew install tcl-tk
+        echo 'export PATH="/usr/local/opt/tcl-tk/bin:$PATH"' >> ~/.zshrc
     - name: Run the python script without fallback
       shell: bash {0}
       run: |
