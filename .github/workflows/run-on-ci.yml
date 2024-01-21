@@ -1,7 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: Get defauls on CI
+name: Get defaults on CI
 
 on:
   workflow_dispatch:
@@ -29,10 +26,32 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Run the python script
+    - name: Run the python script without fallback
       shell: bash
-      run: python -m write_curr_defaults
-    - name: Uplaod artifact for the defaults
+      run: |
+        EXIT_XVFB=9
+        EXIT_FALLBACK=9
+        echo "Running normally"
+        python -m write_curr_defaults
+        EXIT_NORMAL=$?
+        if [ "$EXIT_NORMAL" -ne "0" ] ; then
+          echo "Trying to start Xvfb"
+          Xvfb :99 &
+          echo "Running under Xvfb"
+          DISPLAY=:99 python -m write_curr_defaults
+          EXIT_XVFB=$?
+          if [ "$EXIT_XVFB" -ne "0" ] ; then
+            echo "Running fallback"
+            TK_DEFAULTS_FALLBACK=1 python -m write_curr_defaults
+            EXIT_FALLBACK=$?
+          fi
+        fi
+        if [ "$EXIT_NORMAL" -eq "0" ] || [ "$EXIT_XVFB" -eq "0" ] || [ "$EXIT_FALLBACK" -eq "0" ] ; then
+          exit 0
+        else
+          exit 1
+        fi
+    - name: Upload artifact for the defaults
       uses: actions/upload-artifact@v4
       with:
         name: "tkinter_defaults__${{ matrix.os }}_${{ matrix.python-version }}"

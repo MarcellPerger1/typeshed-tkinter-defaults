@@ -34,9 +34,10 @@ def get_temp_root():
     try:
         return tkinter.Tk()
     except TclError as e:
-        debug('WARN: Cannot initialize tkinter.Tk()')
+        debug(f'##[warn]WARN: Cannot initialize tkinter.Tk(): {e!s}')
         print(f'TclError in tkinter.Tk() constructor: {e!s}')
         # check if stuff works without a tk.Tk() instance
+        tkinter.Button()
         return None
 
 
