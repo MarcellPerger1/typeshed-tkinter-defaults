@@ -1,6 +1,8 @@
 import json
+import os
 import sys
 import tkinter
+from tkinter import TclError
 import _tkinter as tk_internal
 import inspect
 from typing import TextIO
@@ -25,9 +27,22 @@ def short_repr(obj: object, max_len=40) -> str:
     return value[:max_len - 3] + '...'
 
 
+def get_temp_root():
+    do_fallback = os.getenv('TK_DEFAULTS_FALLBACK', '0')
+    if do_fallback.strip().lower() not in ('1', 'yes', 'true'):
+        return tkinter.Tk()
+    try:
+        return tkinter.Tk()
+    except TclError as e:
+        debug('WARN: Cannot initialize tkinter.Tk()')
+        print(f'TclError in tkinter.Tk() constructor: {e!s}')
+        # check if stuff works without a tk.Tk() instance
+        return None
+
+
 def get_defaults():
     out = {}
-    temp_root = tkinter.Tk()
+    temp_root = get_temp_root()
     for name in dir(tkinter):
         if name.startswith('_'):
             debug(f'SKIP key {name!r}: private name', level=2)
@@ -42,14 +57,17 @@ def get_defaults():
             inst = value(temp_root)
         except (
                 NotImplementedError, ValueError, TypeError, AttributeError,
-                tkinter.TclError) as e:
-            if isinstance(e, tkinter.TclError):
+                tkinter.TclError, RuntimeError) as e:
+            if isinstance(e, (tkinter.TclError, RuntimeError)):
                 print(f'TclError in 1-arg __init__: _tkinter.TclError: {e!s}',
                       file=sys.stderr)
             debug(f'INFO key {name!r}: no 1-arg __init__')
             try:
                 inst = value()
-            except (NotImplementedError, ValueError, TypeError, AttributeError):
+            except (NotImplementedError, ValueError, TypeError, AttributeError, RuntimeError):
+                if isinstance(e, (tkinter.TclError, RuntimeError)):
+                    print(f'TclError in 0-arg __init__: _tkinter.TclError: {e!s}',
+                          file=sys.stderr)
                 debug(f'SKIP key {name!r}: '
                       f'no 0-arg or 1-arg __init__')
                 continue
@@ -75,7 +93,8 @@ def get_defaults():
         debug(f'Success key {name!r} (type={short_repr(value)}, '
               f'inst={short_repr(inst)}): defaults={short_repr(defaults, 40)}')
         out[name] = defaults
-    temp_root.destroy()
+    if temp_root is not None:
+        temp_root.destroy()
     return out
 
 
@@ -110,3 +129,7 @@ def write_defaults(file: TextIO, defaults: dict[str, dict] = None):
     defaults_safe = transform_to_serializable(defaults)
     json.dump(defaults_safe, file, indent=4, sort_keys=True)
     return defaults
+
+
+if __name__ == '__main__':
+    print(defaults_str())
