@@ -41,6 +41,7 @@ jobs:
         if [ "$EXIT_NORMAL" -ne "0" ] ; then
           echo "Trying to start Xvfb"
           Xvfb :0 -screen 0 1024x768x16 &
+          sleep 1
           ps aux | grep Xvfb
           echo "Running under Xvfb"
           DISPLAY=:0.0 python -m write_curr_defaults
