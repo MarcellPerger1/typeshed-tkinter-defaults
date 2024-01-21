@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
-      if: !(startswith(matrix.os, 'macos-') && contains('3.9;3.10', matrix.python-version))
+      if: ${{ !(startswith(matrix.os, 'macos-') && contains('3.9;3.10', matrix.python-version)) }}
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
