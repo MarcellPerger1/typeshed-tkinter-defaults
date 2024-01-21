@@ -36,7 +36,8 @@ jobs:
         EXIT_NORMAL=$?
         if [ "$EXIT_NORMAL" -ne "0" ] ; then
           echo "Trying to start Xvfb"
-          Xvfb :99 &
+          Xvfb :99 -screen 0 1024x768x16 &
+          ps aux | grep Xvfb
           echo "Running under Xvfb"
           DISPLAY=:99 python -m write_curr_defaults
           EXIT_XVFB=$?
