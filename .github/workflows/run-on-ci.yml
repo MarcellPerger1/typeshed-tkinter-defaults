@@ -30,12 +30,20 @@ jobs:
       shell: bash
       if: ${{ startswith(matrix.os, 'ubuntu-') }}
       run: sudo apt-get install -y xvfb
-    - name: (MacOS) Install good tcl-tk
+    - name: (MacOS, <3.11) Fix Python's tkinter
       shell: bash
-      if: ${{ startswith(matrix.os, 'macos-') }}
+      if: ${{ startswith(matrix.os, 'macos-') && includes(['3.9', '3.10'], matrix.python-version) }}
       run: |
-        brew install tcl-tk
-        echo 'export PATH="/usr/local/opt/tcl-tk/bin:$PATH"' >> ~/.zshrc
+        brew install tcl-tk pyenv
+        env \
+          PATH="$(brew --prefix tcl-tk)/bin:$PATH" \
+          LDFLAGS="-L$(brew --prefix tcl-tk)/lib" \
+          CPPFLAGS="-I$(brew --prefix tcl-tk)/include" \
+          PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
+          CFLAGS="-I$(brew --prefix tcl-tk)/include" \
+          PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I$(brew --prefix tcl-tk)/include' --with-tcltk-libs='-L$(brew --prefix tcl-tk)/lib -ltcl8.6 -ltk8.6'" \
+          pyenv install ${{matrix.python-version}}
+        pyenv global ${{matrix.python-version}}
     - name: Run the python script without fallback
       shell: bash {0}
       run: |
