@@ -1,0 +1,48 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Get defauls on CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+        os: 
+          - "ubuntu-latest"
+          - "windows-latest"
+          - "macos-latest"
+          # TODO: whenever the available runners change, these need to be updated
+          - "ubuntu-20.04"
+          - "windows-2019"
+          - "macos-11"
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Run the python script
+      shell: bash
+      run: python -m write_curr_defaults
+    - name: Uplaod artifact for the defaults
+      uses: actions/upload-artifact@v4
+      with:
+        name: "tkinter_defaults__${{ matrix.os }}_${{ matrix.python-version }}"
+        path: "tkinter_defaults_curr.json"
+    - name: Commit build
+      if: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' }}
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Upload defaults
+        commit_author: "github-actions[bot] <actions@github.com>"
+        file_pattern: "tkinter_defaults/*.json"
+    # TODO: commit + push files for non-UNIX - can't use stefanzweifel's git-auto-commit-action as it is UNIX-only
+    # Also, it doesn't properly handle matrix runs
