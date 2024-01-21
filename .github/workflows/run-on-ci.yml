@@ -28,7 +28,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Xvfb for ubuntu
       shell: bash
-      if: ${{ startswith(matrix.os, 'ubuntu-') }}
+      if: ${{ startswith(matrix.os, 'ubuntu-') || startswith(matrix.os, 'macos-') }}
       run: sudo apt-get install -y xvfb
     - name: Run the python script without fallback
       shell: bash {0}
@@ -41,11 +41,17 @@ jobs:
         if [ "$EXIT_NORMAL" -ne "0" ] ; then
           echo "Trying to start Xvfb"
           Xvfb :0 -screen 0 1024x768x16 &
-          sleep 1
-          ps aux | grep Xvfb
-          echo "Running under Xvfb"
-          DISPLAY=:0.0 python -m write_curr_defaults
-          EXIT_XVFB=$?
+          EXITSTATUS_XVFB=$?
+          if [ "$EXITSTATUS_XVFB" -ne "0" ] ; then
+            echo "Couldn't run Xvfb"
+            EXIT_XVFB="$EXITSTATUS_XVFB"
+          else
+            sleep 2
+            ps aux | grep Xvfb
+            echo "Running under Xvfb"
+            DISPLAY=:0.0 python -m write_curr_defaults
+            EXIT_XVFB=$?
+          fi
           if [ "$EXIT_XVFB" -ne "0" ] ; then
             echo "Running fallback"
             TK_DEFAULTS_FALLBACK=1 python -m write_curr_defaults
