@@ -33,8 +33,8 @@ def get_arch_key():
 OUT_PATH_FMT = 'tkinter_defaults/default{n}__{plat}.json'
 
 
-def _find_available_path(result: str, check_overwrite=True):
-    """Return an available path to write to (or None if no write needed)"""
+def _find_available_path(result: str, check_overwrite=True) -> tuple[PathLike, PathLike | None]:
+    """Return tuple of (path of result [NOT None], path to write to [or None])"""
     def get_out_path():
         return Path(OUT_PATH_FMT.format(n=n, plat=plat))
 
@@ -42,13 +42,14 @@ def _find_available_path(result: str, check_overwrite=True):
     n = 0
     out_path = get_out_path()
     if not check_overwrite:
-        return out_path
+        return out_path, out_path
     while n < 1_000:
         if not out_path.exists():
-            return out_path  # free path, write here
+            return out_path, out_path  # free path, write here
         orig = _readfile(out_path)
         if orig == result:
-            return None  # same result so no write
+            # same result so no write but still return path to find it at
+            return out_path, None
         n += 1
         out_path = get_out_path()
     raise TimeoutError("Checked 1000 paths, none available. "
@@ -60,12 +61,14 @@ def run(check_overwrite=True):
     defaults_s = defaults_str()
     debug('INFO: Writing defaults locally')
     _writefile('tkinter_defaults_curr.json', defaults_s)
-    out_path = _find_available_path(defaults_s, check_overwrite)
+    res_path, out_path = _find_available_path(defaults_s, check_overwrite)
     if out_path is not None:
-        _writefile(out_path, defaults_s)
         debug('INFO: Writing defaults to tkinter_defaults/')
+        _writefile(out_path, defaults_s)
     else:
         debug('INFO: No write to tkinter_defaults/ needed (same as existing info)')
+    debug('Writing curr_out_filename.txt')
+    _writefile('curr_out_filename.txt', content=str(res_path))
 
 
 if __name__ == '__main__':

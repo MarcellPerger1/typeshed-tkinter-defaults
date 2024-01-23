@@ -1,6 +1,8 @@
 # Extra
 # Results for the current platform
 tkinter_defaults_curr.json
+# Filename of the written default (for merging them in GH actions)
+curr_out_filename.txt
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,windows,linux,macos,pycharm
