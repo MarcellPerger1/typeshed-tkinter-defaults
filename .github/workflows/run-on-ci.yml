@@ -44,7 +44,7 @@ jobs:
           pyenv install ${{matrix.python-version}}
         pyenv global ${{matrix.python-version}}
     - name: Run python script (with fallbacks)
-      id: run_main__${{ matrix.python-version }}__${{ matrix.os }}
+      id: run_main
       shell: bash {0}
       run: |
         EXIT_XVFB=9
@@ -90,18 +90,13 @@ jobs:
       with:
         name: "_out_tkinter_defaults__${{ matrix.os }}_${{ matrix.python-version }}"
         path: "tkinter_defaults_curr.json"
-    - name: Debug
-      shell: bash
-      env:
-        OF: ${{ steps[format("run_main__{0}__{1}", matrix.python-version, matrix.os)].outputs.outfile_name }}
-      run: |
-        echo "${{ steps.run_main.outputs.outfile_name }}"
-        echo $OF
     - name: Upload artifact for merge step
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ steps[format("run_main__{0}__{1}", matrix.python-version, matrix.os)].outputs.outfile_name }}
-        path: "tkinter_defaults_curr.json"
+        name: zz_for_merge__${{ matrix.python-version }}_${{ matrix.os}}
+        path: |
+          tkinter_defaults_curr.json
+          curr_out_filename.txt
   # Collect and commit results from the other runs
   commit-results:
     needs:
@@ -119,7 +114,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: "./downloaded_artifacts"
-          pattern: "default*.json"
+          pattern: "zz_for_merge__*"
       - name: Write downloaded artifacts to tkinter_defaults
         run: python -m write_downloaded_artifacts
       - name: Merge defaults

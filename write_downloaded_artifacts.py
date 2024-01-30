@@ -6,7 +6,7 @@ import sys
 import warnings
 from pathlib import Path
 
-from utils import readfile_json, writefile_json, writefile, JsonT
+from utils import readfile_json, writefile_json, writefile, JsonT, readfile
 
 
 ARTIFACTS_DIR = Path("./downloaded_artifacts")
@@ -25,10 +25,8 @@ def get_artifacts() -> dict[str, JsonT]:
     out = {}
     for a_dir in ARTIFACTS_DIR.iterdir():
         assert a_dir.is_dir()
-        name = removesuffix(a_dir.name, '.json') + '.json'
-        file: Path
-        (file,) = a_dir.iterdir()
-        data = readfile_json(file)
+        name = readfile(a_dir / 'curr_out_filename.txt').strip()
+        data = readfile_json(a_dir / 'tkinter_defaults_curr.json')
         out[name] = data
     return out
 
