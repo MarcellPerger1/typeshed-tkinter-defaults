@@ -4,9 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    permissions:
-      contents: write
+  build-defaults:
     strategy:
       fail-fast: false
       matrix:
@@ -45,7 +43,8 @@ jobs:
           PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I$(brew --prefix tcl-tk)/include' --with-tcltk-libs='-L$(brew --prefix tcl-tk)/lib -ltcl8.6 -ltk8.6'" \
           pyenv install ${{matrix.python-version}}
         pyenv global ${{matrix.python-version}}
-    - name: Run the python script without fallback
+    - name: Run python script (with fallbacks)
+      id: run_main
       shell: bash {0}
       run: |
         EXIT_XVFB=9
@@ -75,6 +74,8 @@ jobs:
           fi
         fi
         if [ "$EXIT_NORMAL" -eq "0" ] || [ "$EXIT_XVFB" -eq "0" ] || [ "$EXIT_FALLBACK" -eq "0" ] ; then
+          FILENAME=$(cat cat ./curr_out_filename.txt)
+          echo "outfile_name=$FILENAME" >> "GITHUB_OUTPUT"
           exit 0
         else
           exit 1
@@ -82,14 +83,39 @@ jobs:
     - name: Upload artifact for the defaults
       uses: actions/upload-artifact@v4
       with:
-        name: "tkinter_defaults__${{ matrix.os }}_${{ matrix.python-version }}"
+        name: "_out_tkinter_defaults__${{ matrix.os }}_${{ matrix.python-version }}"
         path: "tkinter_defaults_curr.json"
-    - name: Commit build
-      if: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' }}
-      uses: stefanzweifel/git-auto-commit-action@v5
+    - name: Upload artifact for merge step
+      uses: actions/upload-artifact@v4
       with:
-        commit_message: Upload defaults
-        commit_author: "github-actions[bot] <actions@github.com>"
-        file_pattern: "tkinter_defaults/*.json"
-    # TODO: commit + push files for non-UNIX - can't use stefanzweifel's git-auto-commit-action as it is UNIX-only
-    # Also, it doesn't properly handle matrix runs
+        name: ${{ steps.run_main.outputs.outfile_name }}
+        path: "tkinter_defaults_curr.json"
+  # Collect and commit results from the other runs
+  commit-results:
+    needs:
+      - "build-defaults"
+    permissions:
+      contents: write
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: "./downloaded_artifacts"
+          pattern: "default*.json"
+      - name: Write downloaded artifacts to tkinter_defaults
+        run: python -m write_downloaded_artifacts
+      - name: Merge defaults
+        run: python -m merge_defaults
+      - name: Upload defaults
+        if: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Upload defaults [bot]
+          commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          file_pattern: "merged_defaults/*.json tkinter_defaults/**/*.json"

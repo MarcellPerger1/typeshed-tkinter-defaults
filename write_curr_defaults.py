@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import platform
+import sys
 from os import PathLike
 from pathlib import Path
 
@@ -26,14 +27,19 @@ def _readfile(path: str | PathLike, mode='r') -> str:
         return f.read()
 
 
+def get_py_key():
+    ver_key = f'{sys.version_info.major}.{sys.version_info.minor}'
+    return f'{platform.python_implementation()}-{ver_key}'
+
+
 def get_arch_key():
-    return platform.platform()
+    return f'{get_py_key()}_{platform.platform()}'
 
 
 OUT_PATH_FMT = 'tkinter_defaults/default{n}__{plat}.json'
 
 
-def _find_available_path(result: str, check_overwrite=True) -> tuple[PathLike, PathLike | None]:
+def _find_available_path(result: str, check_overwrite=True) -> tuple[Path, Path | None]:
     """Return tuple of (path of result [NOT None], path to write to [or None])"""
     def get_out_path():
         return Path(OUT_PATH_FMT.format(n=n, plat=plat))
@@ -68,7 +74,7 @@ def run(check_overwrite=True):
     else:
         debug('INFO: No write to tkinter_defaults/ needed (same as existing info)')
     debug('Writing curr_out_filename.txt')
-    _writefile('curr_out_filename.txt', content=str(res_path))
+    _writefile('curr_out_filename.txt', content=res_path.name)
 
 
 if __name__ == '__main__':

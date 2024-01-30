@@ -3,6 +3,8 @@
 tkinter_defaults_curr.json
 # Filename of the written default (for merging them in GH actions)
 curr_out_filename.txt
+# Github action downloads artifacts to here
+downloaded_artifacts/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,windows,linux,macos,pycharm
