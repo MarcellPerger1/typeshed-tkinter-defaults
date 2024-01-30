@@ -44,7 +44,7 @@ def _is_different_values(v: object) -> bool:
             and len(v) == 2  # ['@different:n', [v0, v1, ...]]
             and isinstance(v[0], str)
             and isinstance(v[1], (list, tuple))
-            and len(v[1] >= 2)
+            and len(v[1]) >= 2
             and v[0].startswith('@different:'))
 
 
