@@ -41,8 +41,10 @@ def _make_data_concise(merged_data: dict[str, dict[str, T]]) -> dict[str, dict[s
 
 def _is_different_values(v: object) -> bool:
     return (isinstance(v, (list, tuple))
-            and len(v) >= 3  # ['@different:n', v0, v1, ...]
+            and len(v) == 2  # ['@different:n', [v0, v1, ...]]
             and isinstance(v[0], str)
+            and isinstance(v[1], (list, tuple))
+            and len(v[1] >= 2)
             and v[0].startswith('@different:'))
 
 

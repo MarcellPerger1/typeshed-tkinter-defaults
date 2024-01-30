@@ -37,6 +37,6 @@ def readfile_json(path: str | PathLike, mode='r') -> JsonT:
         return json.load(f)
 
 
-def writefile_json(path: str | PathLike, content: JsonT | Any, mode='w'):
+def writefile_json(path: str | PathLike, content: JsonT | Any, mode='w', indent=2):
     with open(path, mode, encoding='utf8') as f:
-        json.dump(content, f, sort_keys=True)
+        json.dump(content, f, sort_keys=True, indent=indent)
