@@ -32,7 +32,7 @@ def get_artifacts() -> dict[str, JsonT]:
 
 
 def write_artifact(name: str, data: JsonT):
-    path = Path('.') / name
+    path = DEFAULTS_OUT_DIR / name
     if not path.exists():
         print(f'Writing artifact to {path}')
         return writefile_json(path, data, mode='x')

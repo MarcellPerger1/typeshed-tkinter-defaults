@@ -2,6 +2,11 @@ name: Get defaults on CI
 
 on:
   workflow_dispatch:
+    inputs:
+      full:
+        type: boolean
+        description: Whether to do a slower (~5 mins) full run
+        default: true
 
 jobs:
   build-defaults:
@@ -18,10 +23,11 @@ jobs:
           - "windows-2019"
           - "macos-11"
     runs-on: ${{ matrix.os }}
+    if: ${{ inputs.full || !(startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version)) }}
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      if: ${{ !(startswith(matrix.os, 'macos-') && contains('3.9;3.10', matrix.python-version)) }}
+      if: ${{ !(startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version)) }}
       uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
@@ -31,7 +37,7 @@ jobs:
       run: sudo apt-get install -y xvfb
     - name: (MacOS, <3.11) Fix Python's tkinter
       shell: bash
-      if: ${{ startswith(matrix.os, 'macos-') && contains('3.9;3.10', matrix.python-version) }}
+      if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
       run: |
         brew install tcl-tk pyenv openssl readline sqlite3 xz zlib
         env \
