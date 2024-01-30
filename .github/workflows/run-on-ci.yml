@@ -22,8 +22,22 @@ jobs:
           - "ubuntu-20.04"
           - "windows-2019"
           - "macos-11"
+        do-full:
+          - ${{ inputs.full }}
+        exclude:
+          - do-full: false
+            os: macos-latest
+            python-version: "3.9"
+          - do-full: false
+            os: macos-11
+            python-version: "3.9"
+          - do-full: false
+            os: macos-latest
+            python-version: "3.10"
+          - do-full: false
+            os: macos-11
+            python-version: "3.10"
     runs-on: ${{ matrix.os }}
-    if: ${{ inputs.full || !(startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version)) }}
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
