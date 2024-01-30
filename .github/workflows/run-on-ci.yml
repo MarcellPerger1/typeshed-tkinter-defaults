@@ -120,7 +120,6 @@ jobs:
       - name: Merge defaults
         run: python -m merge_defaults
       - name: Upload defaults
-        if: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Upload defaults [bot]
