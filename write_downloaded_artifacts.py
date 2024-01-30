@@ -34,6 +34,7 @@ def get_artifacts() -> dict[str, JsonT]:
 def write_artifact(name: str, data: JsonT):
     path = Path('.') / name
     if not path.exists():
+        print(f'Writing artifact to {path}')
         return writefile_json(path, data, mode='x')
     assert path.is_file()
     would_write = json.dumps(data)

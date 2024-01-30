@@ -25,8 +25,10 @@ def _read_defaults():
 def merge_defaults():
     OUT_DIR.mkdir(exist_ok=True)
     merged = merge_data(*_read_defaults().values())
+    print('Writing detailed file')
     writefile_json(OUT_DIR / 'details.json', merged)
     concise = _make_data_concise(merged)
+    print('Writing concise file')
     writefile_json(OUT_DIR / 'concise.json', concise)
 
 

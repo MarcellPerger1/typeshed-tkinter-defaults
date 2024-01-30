@@ -119,6 +119,11 @@ jobs:
         run: python -m write_downloaded_artifacts
       - name: Merge defaults
         run: python -m merge_defaults
+      - name: Check written files
+        run: |
+          ls tkinter_defaults
+          ls merged_defaults
+          echo tkinter_defaults/**/*.json
       - name: Upload defaults
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
