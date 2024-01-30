@@ -44,7 +44,7 @@ jobs:
           pyenv install ${{matrix.python-version}}
         pyenv global ${{matrix.python-version}}
     - name: Run python script (with fallbacks)
-      id: run_main
+      id: run_main__${{ matrix.python-version }}__${{ matrix.os }}
       shell: bash {0}
       run: |
         EXIT_XVFB=9
@@ -93,14 +93,14 @@ jobs:
     - name: Debug
       shell: bash
       env:
-        OF: ${{ steps.run_main.outputs.outfile_name }}
+        OF: ${{ steps[format("run_main__{0}__{1}", matrix.python-version, matrix.os)].outputs.outfile_name }}
       run: |
         echo "${{ steps.run_main.outputs.outfile_name }}"
         echo $OF
     - name: Upload artifact for merge step
       uses: actions/upload-artifact@v4
       with:
-        name: "${{ steps.run_main.outputs.outfile_name }}"
+        name: ${{ steps[format("run_main__{0}__{1}", matrix.python-version, matrix.os)].outputs.outfile_name }}
         path: "tkinter_defaults_curr.json"
   # Collect and commit results from the other runs
   commit-results:
