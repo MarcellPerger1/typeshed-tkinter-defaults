@@ -92,8 +92,11 @@ jobs:
         path: "tkinter_defaults_curr.json"
     - name: Debug
       shell: bash
+      env:
+        OF: ${{ steps.run_main.outputs.outfile_name }}
       run: |
         echo "${{ steps.run_main.outputs.outfile_name }}"
+        echo $OF
     - name: Upload artifact for merge step
       uses: actions/upload-artifact@v4
       with:
