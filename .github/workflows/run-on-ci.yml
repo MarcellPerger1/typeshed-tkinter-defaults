@@ -74,7 +74,11 @@ jobs:
           fi
         fi
         if [ "$EXIT_NORMAL" -eq "0" ] || [ "$EXIT_XVFB" -eq "0" ] || [ "$EXIT_FALLBACK" -eq "0" ] ; then
-          FILENAME=$(cat cat ./curr_out_filename.txt)
+          FILENAME=$(cat ./curr_out_filename.txt)
+          if [ -z "$FILENAME" ] ; then
+            echo "Error: curr_out_filename not set"
+            exit 1
+          fi
           echo "outfile_name=$FILENAME" >> "GITHUB_OUTPUT"
           exit 0
         else
