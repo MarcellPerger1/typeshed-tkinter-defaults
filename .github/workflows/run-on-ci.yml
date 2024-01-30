@@ -5,7 +5,7 @@ on:
     inputs:
       full:
         type: boolean
-        description: Whether to do a slower (~5 mins) full run
+        description: Do a slower full run (5 minutes)?
         default: true
 
 jobs:
@@ -143,10 +143,9 @@ jobs:
         run: |
           ls tkinter_defaults
           ls merged_defaults
-          echo tkinter_defaults/**/*.json
       - name: Upload defaults
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Upload defaults [bot]
           commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
-          file_pattern: "merged_defaults/*.json tkinter_defaults/**/*.json"
+          file_pattern: "merged_defaults/*.json tkinter_defaults/*.json"
