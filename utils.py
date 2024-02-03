@@ -40,3 +40,12 @@ def readfile_json(path: str | PathLike, mode='r') -> JsonT:
 def writefile_json(path: str | PathLike, content: JsonT | Any, mode='w', indent=2):
     with open(path, mode, encoding='utf8') as f:
         json.dump(content, f, sort_keys=True, indent=indent)
+
+
+def _normalize_json_str(s: str):
+    # no indent so no newlines cross-platform issues
+    return json.dumps(json.loads(s), sort_keys=True)
+
+
+def json_str_eq(a: str, b: str) -> bool:
+    return _normalize_json_str(a).strip() == _normalize_json_str(b).strip()

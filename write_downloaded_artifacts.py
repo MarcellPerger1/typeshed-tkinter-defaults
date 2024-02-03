@@ -6,7 +6,7 @@ import sys
 import warnings
 from pathlib import Path
 
-from utils import readfile_json, writefile_json, writefile, JsonT, readfile
+from utils import readfile_json, writefile_json, writefile, JsonT, readfile, json_str_eq
 
 
 ARTIFACTS_DIR = Path("./downloaded_artifacts")
@@ -38,8 +38,8 @@ def write_artifact(name: str, data: JsonT):
         return writefile_json(path, data, mode='x')
     assert path.is_file()
     would_write = json.dumps(data)
-    actual_data = readfile_json(data)
-    if would_write == actual_data:
+    actual_data = readfile_json(path)
+    if json_str_eq(would_write, actual_data):
         return
     warnings.warn(RuntimeWarning(
         "Tried to write artifact to file that already exists and if different!"
