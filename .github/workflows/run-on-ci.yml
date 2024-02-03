@@ -60,8 +60,9 @@ jobs:
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
       run: |
-        # Install the python@3.11 dependency directly so we can specify --overwrite
-        brew install --overwrite python@3.11
+        # Install the python@3.{11,12} dependency directly so we can specify --overwrite
+        brew install --overwrite python@3.11 python@3.12
+        echo "[INFO] Installed python"
         brew install --overwrite tcl-tk pyenv openssl readline sqlite3 xz zlib
     - name: (MacOS, <3.11) Install python with working tkinter
       shell: bash
