@@ -56,11 +56,15 @@ jobs:
       shell: bash
       if: ${{ startswith(matrix.os, 'ubuntu-') }}
       run: sudo apt-get install -y xvfb
-    - name: (MacOS, <3.11) Fix Python's tkinter
+    - name: (MacOS, <3.11) Install pyenv
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
       run: |
-        brew install tcl-tk pyenv openssl readline sqlite3 xz zlib
+        brew install --overwrite tcl-tk pyenv openssl readline sqlite3 xz zlib
+    - name: (MacOS, <3.11) Install python with working tkinter
+      shell: bash
+      if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
+      run: |
         env \
           PATH="$(brew --prefix tcl-tk)/bin:$PATH" \
           LDFLAGS="-L$(brew --prefix tcl-tk)/lib" \
