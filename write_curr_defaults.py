@@ -53,9 +53,10 @@ def _find_available_path(result: str, check_overwrite=True) -> tuple[Path, Path 
         if not out_path.exists():
             return out_path, out_path  # free path, write here
         orig = _readfile(out_path)
-        if orig == result:
+        if orig.strip() == result.strip():
             # same result so no write but still return path to find it at
             return out_path, None
+        print(f'Compared to {n=}, no match')
         n += 1
         out_path = get_out_path()
     raise TimeoutError("Checked 1000 paths, none available. "
