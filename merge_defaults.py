@@ -32,6 +32,24 @@ def merge_defaults():
     concise = _make_data_concise(merged)
     print('Writing concise file')
     writefile_json(OUT_DIR / 'concise.json', concise)
+    concise_2 = _summarize_data_2(merged)
+    print('Writing extra concise file')
+    writefile_json(OUT_DIR / 'concise_2.json', concise_2)
+
+
+def _summarize_data_2(merged_data: dict[str, dict[str, JsonT]]) -> dict[str, dict[str, str]]:
+    return {
+        name: {
+            k: _summarize_w_val_2(v) for k, v in w_defaults.items()
+            if not _is_different_values(v)
+        } for name, w_defaults in merged_data.items()}
+
+
+def _summarize_w_val_2(v: T) -> T | str | None:
+    assert not _is_different_values(v), "different values should've been filtered out"
+    if _is_type_diff(v):
+        return f'{v[1]}    @typeDiff'
+    return v
 
 
 def _make_data_concise(merged_data: dict[str, dict[str, T]]) -> dict[str, dict[str, T]]:
