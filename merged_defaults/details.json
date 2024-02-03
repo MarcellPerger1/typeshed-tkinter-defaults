@@ -3,51 +3,51 @@
     "activebackground": [
       "@different:3",
       [
-        "SystemButtonFace",
         "#ececec",
+        "SystemButtonFace",
         "systemWindowBackgroundColor"
       ]
     ],
     "activeforeground": [
       "@different:3",
       [
+        "#000000",
         "SystemButtonText",
-        "systemPressedButtonTextColor",
-        "#000000"
+        "systemPressedButtonTextColor"
       ]
     ],
     "anchor": "center",
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=2",
         "@Tcl_Obj: type=pixel, value=1",
-        "@Tcl_Obj: type=pixel, value=2"
+        "@Tcl_Obj: type=pixel, value=2",
+        "@Tcl_Obj: type=string, value=2"
       ]
     ],
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bitmap": "",
     "borderwidth": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=2",
         "@Tcl_Obj: type=pixel, value=1",
-        "@Tcl_Obj: type=pixel, value=2"
+        "@Tcl_Obj: type=pixel, value=2",
+        "@Tcl_Obj: type=string, value=2"
       ]
     ],
     "command": "",
@@ -57,34 +57,34 @@
     "disabledforeground": [
       "@different:2",
       [
-        "SystemDisabledText",
-        "#a3a3a3"
+        "#a3a3a3",
+        "SystemDisabledText"
       ]
     ],
     "fg": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
-        "Black"
+        "Black",
+        "SystemButtonText"
       ]
     ],
     "font": "TkDefaultFont",
     "foreground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
-        "Black"
+        "Black",
+        "SystemButtonText"
       ]
     ],
     "height": 0,
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -96,10 +96,11 @@
       ]
     ],
     "highlightthickness": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "image": "",
@@ -108,17 +109,17 @@
     "padx": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=1",
+        "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=3m",
-        "@Tcl_Obj: type=pixel, value=1"
+        "@Tcl_Obj: type=string, value=1"
       ]
     ],
     "pady": [
       "@different:3",
       [
+        "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=1m",
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "@Tcl_Obj: type=string, value=1"
       ]
     ],
     "relief": [
@@ -137,10 +138,11 @@
     "underline": -1,
     "width": 0,
     "wraplength": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ]
   },
@@ -148,18 +150,18 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": "0",
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "borderwidth": "0",
@@ -169,18 +171,18 @@
     "height": [
       "@different:4",
       [
-        "276",
         "198",
         "199",
-        "265"
+        "265",
+        "276"
       ]
     ],
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -202,9 +204,9 @@
     "insertbackground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
-        "Black"
+        "Black",
+        "SystemButtonText"
       ]
     ],
     "insertborderwidth": "0",
@@ -217,8 +219,8 @@
     "selectbackground": [
       "@different:3",
       [
-        "SystemHighlight",
         "#c3c3c3",
+        "SystemHighlight",
         "systemSelectedTextBackgroundColor"
       ]
     ],
@@ -226,9 +228,9 @@
     "selectforeground": [
       "@different:3",
       [
-        "systemSelectedTextColor",
         "#000000",
-        "SystemHighlightText"
+        "SystemHighlightText",
+        "systemSelectedTextColor"
       ]
     ],
     "state": "normal",
@@ -236,10 +238,10 @@
     "width": [
       "@different:4",
       [
-        "378",
-        "394",
         "283",
-        "284"
+        "284",
+        "378",
+        "394"
       ]
     ],
     "xscrollcommand": "",
@@ -251,16 +253,16 @@
     "activebackground": [
       "@different:3",
       [
-        "SystemButtonFace",
         "#ececec",
+        "SystemButtonFace",
         "systemWindowBackgroundColor"
       ]
     ],
     "activeforeground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -268,34 +270,34 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=2",
         "@Tcl_Obj: type=pixel, value=1",
-        "@Tcl_Obj: type=pixel, value=2"
+        "@Tcl_Obj: type=pixel, value=2",
+        "@Tcl_Obj: type=string, value=2"
       ]
     ],
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bitmap": "",
     "borderwidth": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=2",
         "@Tcl_Obj: type=pixel, value=1",
-        "@Tcl_Obj: type=pixel, value=2"
+        "@Tcl_Obj: type=pixel, value=2",
+        "@Tcl_Obj: type=string, value=2"
       ]
     ],
     "command": "",
@@ -304,15 +306,15 @@
     "disabledforeground": [
       "@different:2",
       [
-        "SystemDisabledText",
-        "#a3a3a3"
+        "#a3a3a3",
+        "SystemDisabledText"
       ]
     ],
     "fg": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -320,8 +322,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -329,9 +331,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -343,10 +345,11 @@
       ]
     ],
     "highlightthickness": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "image": "",
@@ -363,26 +366,28 @@
     "onvalue": "1",
     "overrelief": "",
     "padx": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "pady": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "relief": "flat",
     "selectcolor": [
       "@different:3",
       [
+        "#b03060",
         "#ffffff",
-        "SystemWindow",
-        "#b03060"
+        "SystemWindow"
       ]
     ],
     "selectimage": "",
@@ -396,18 +401,19 @@
     "variable": [
       "@different:4",
       [
-        "@Tcl_Obj: type=string, value=!checkbutton",
+        "@Tcl_Obj: type=parsedVarName, value=!checkbutton",
         "@Tcl_Obj: type=parsedVarName, value=!checkbutton1",
-        "@Tcl_Obj: type=string, value=!checkbutton1",
-        "@Tcl_Obj: type=parsedVarName, value=!checkbutton"
+        "@Tcl_Obj: type=string, value=!checkbutton",
+        "@Tcl_Obj: type=string, value=!checkbutton1"
       ]
     ],
     "width": 0,
     "wraplength": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ]
   },
@@ -415,9 +421,9 @@
     "background": [
       "@different:3",
       [
-        "systemTextBackgroundColor",
         "#ffffff",
-        "SystemWindow"
+        "SystemWindow",
+        "systemTextBackgroundColor"
       ]
     ],
     "bd": [
@@ -430,9 +436,9 @@
     "bg": [
       "@different:3",
       [
-        "systemTextBackgroundColor",
         "#ffffff",
-        "SystemWindow"
+        "SystemWindow",
+        "systemTextBackgroundColor"
       ]
     ],
     "borderwidth": [
@@ -446,24 +452,24 @@
     "disabledbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "disabledforeground": [
       "@different:2",
       [
-        "SystemDisabledText",
-        "#a3a3a3"
+        "#a3a3a3",
+        "SystemDisabledText"
       ]
     ],
     "exportselection": 1,
     "fg": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -471,17 +477,17 @@
     "foreground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -503,8 +509,8 @@
     "insertbackground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -524,17 +530,17 @@
     "readonlybackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "relief": "sunken",
     "selectbackground": [
       "@different:3",
       [
-        "SystemHighlight",
         "#c3c3c3",
+        "SystemHighlight",
         "systemSelectedTextBackgroundColor"
       ]
     ],
@@ -548,9 +554,9 @@
     "selectforeground": [
       "@different:3",
       [
-        "systemSelectedTextColor",
         "#000000",
-        "SystemHighlightText"
+        "SystemHighlightText",
+        "systemSelectedTextColor"
       ]
     ],
     "show": "",
@@ -567,18 +573,18 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": 0,
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "borderwidth": 0,
@@ -590,9 +596,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -605,17 +611,19 @@
     ],
     "highlightthickness": 0,
     "padx": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "pady": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "relief": "flat",
@@ -627,51 +635,51 @@
     "activebackground": [
       "@different:3",
       [
-        "SystemButtonFace",
         "#ececec",
+        "SystemButtonFace",
         "systemWindowBackgroundColor"
       ]
     ],
     "activeforeground": [
       "@different:3",
       [
+        "#000000",
         "SystemButtonText",
-        "systemPressedButtonTextColor",
-        "#000000"
+        "systemPressedButtonTextColor"
       ]
     ],
     "anchor": "center",
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=2",
         "@Tcl_Obj: type=pixel, value=1",
-        "@Tcl_Obj: type=pixel, value=2"
+        "@Tcl_Obj: type=pixel, value=2",
+        "@Tcl_Obj: type=string, value=2"
       ]
     ],
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bitmap": "",
     "borderwidth": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=2",
         "@Tcl_Obj: type=pixel, value=1",
-        "@Tcl_Obj: type=pixel, value=2"
+        "@Tcl_Obj: type=pixel, value=2",
+        "@Tcl_Obj: type=string, value=2"
       ]
     ],
     "compound": "none",
@@ -679,15 +687,15 @@
     "disabledforeground": [
       "@different:2",
       [
-        "SystemDisabledText",
-        "#a3a3a3"
+        "#a3a3a3",
+        "SystemDisabledText"
       ]
     ],
     "fg": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -695,8 +703,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -704,9 +712,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -718,26 +726,29 @@
       ]
     ],
     "highlightthickness": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "image": "",
     "justify": "center",
     "padx": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "pady": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "relief": "flat",
@@ -748,10 +759,11 @@
     "underline": -1,
     "width": 0,
     "wraplength": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ]
   },
@@ -759,18 +771,18 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": 2,
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "borderwidth": 2,
@@ -781,8 +793,8 @@
     "fg": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -790,8 +802,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -799,9 +811,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -816,17 +828,19 @@
     "labelanchor": "nw",
     "labelwidget": "",
     "padx": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "pady": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "relief": "groove",
@@ -839,25 +853,25 @@
     "activestyle": [
       "@different:2",
       [
-        "underline",
-        "dotbox"
+        "dotbox",
+        "underline"
       ]
     ],
     "background": [
       "@different:3",
       [
-        "systemTextBackgroundColor",
         "#ffffff",
-        "SystemWindow"
+        "SystemWindow",
+        "systemTextBackgroundColor"
       ]
     ],
     "bd": 1,
     "bg": [
       "@different:3",
       [
-        "systemTextBackgroundColor",
         "#ffffff",
-        "SystemWindow"
+        "SystemWindow",
+        "systemTextBackgroundColor"
       ]
     ],
     "borderwidth": 1,
@@ -865,16 +879,16 @@
     "disabledforeground": [
       "@different:2",
       [
-        "SystemDisabledText",
-        "#a3a3a3"
+        "#a3a3a3",
+        "SystemDisabledText"
       ]
     ],
     "exportselection": 1,
     "fg": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -888,8 +902,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -897,9 +911,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -922,15 +936,15 @@
     "relief": [
       "@different:2",
       [
-        "sunken",
-        "solid"
+        "solid",
+        "sunken"
       ]
     ],
     "selectbackground": [
       "@different:3",
       [
-        "SystemHighlight",
         "#c3c3c3",
+        "SystemHighlight",
         "systemSelectedTextBackgroundColor"
       ]
     ],
@@ -938,9 +952,9 @@
     "selectforeground": [
       "@different:3",
       [
-        "systemSelectedTextColor",
         "#000000",
-        "SystemHighlightText"
+        "SystemHighlightText",
+        "systemSelectedTextColor"
       ]
     ],
     "selectmode": "browse",
@@ -956,39 +970,39 @@
       "@different:3",
       [
         "@Tcl_Obj: type=border, value=#abcdef",
-        "@Tcl_Obj: type=border, value=SystemHighlight",
-        "@Tcl_Obj: type=border, value=#ececec"
+        "@Tcl_Obj: type=border, value=#ececec",
+        "@Tcl_Obj: type=border, value=SystemHighlight"
       ]
     ],
     "activeborderwidth": [
       "@different:3",
       [
-        "@Tcl_Obj: type=pixel, value=0",
         1,
+        "@Tcl_Obj: type=pixel, value=0",
         "@Tcl_Obj: type=pixel, value=1"
       ]
     ],
     "activeforeground": [
       "@different:3",
       [
-        "@Tcl_Obj: type=color, value=SystemHighlightText",
         "@Tcl_Obj: type=color, value=#000000",
-        "@Tcl_Obj: type=color, value=#abcdef"
+        "@Tcl_Obj: type=color, value=#abcdef",
+        "@Tcl_Obj: type=color, value=SystemHighlightText"
       ]
     ],
     "background": [
       "@different:3",
       [
         "@Tcl_Obj: type=border, value=#000001",
-        "@Tcl_Obj: type=border, value=SystemMenu",
-        "@Tcl_Obj: type=border, value=#d9d9d9"
+        "@Tcl_Obj: type=border, value=#d9d9d9",
+        "@Tcl_Obj: type=border, value=SystemMenu"
       ]
     ],
     "bd": [
       "@different:3",
       [
-        "@Tcl_Obj: type=pixel, value=0",
         1,
+        "@Tcl_Obj: type=pixel, value=0",
         "@Tcl_Obj: type=pixel, value=1"
       ]
     ],
@@ -996,15 +1010,15 @@
       "@different:3",
       [
         "@Tcl_Obj: type=border, value=#000001",
-        "@Tcl_Obj: type=string, value=SystemMenu",
-        "@Tcl_Obj: type=border, value=#d9d9d9"
+        "@Tcl_Obj: type=border, value=#d9d9d9",
+        "@Tcl_Obj: type=string, value=SystemMenu"
       ]
     ],
     "borderwidth": [
       "@different:3",
       [
-        "@Tcl_Obj: type=pixel, value=0",
         1,
+        "@Tcl_Obj: type=pixel, value=0",
         "@Tcl_Obj: type=pixel, value=1"
       ]
     ],
@@ -1012,32 +1026,32 @@
     "disabledforeground": [
       "@different:3",
       [
-        "@Tcl_Obj: type=color, value=#abcdef",
         "@Tcl_Obj: type=color, value=#a3a3a3",
+        "@Tcl_Obj: type=color, value=#abcdef",
         "@Tcl_Obj: type=color, value=SystemDisabledText"
       ]
     ],
     "fg": [
       "@different:3",
       [
-        "@Tcl_Obj: type=color, value=#010000",
         "@Tcl_Obj: type=color, value=#000000",
+        "@Tcl_Obj: type=color, value=#010000",
         "@Tcl_Obj: type=color, value=SystemMenuText"
       ]
     ],
     "font": [
       "@different:3",
       [
-        "@Tcl_Obj: type=font, value={Segoe UI} 9",
+        "@Tcl_Obj: type=font, value=TkMenuFont",
         "@Tcl_Obj: type=font, value=menu",
-        "@Tcl_Obj: type=font, value=TkMenuFont"
+        "@Tcl_Obj: type=font, value={Segoe UI} 9"
       ]
     ],
     "foreground": [
       "@different:3",
       [
-        "@Tcl_Obj: type=color, value=#010000",
         "@Tcl_Obj: type=color, value=#000000",
+        "@Tcl_Obj: type=color, value=#010000",
         "@Tcl_Obj: type=string, value=SystemMenuText"
       ]
     ],
@@ -1045,16 +1059,16 @@
     "relief": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=flat",
+        "@Tcl_Obj: type=index, value=flat",
         "@Tcl_Obj: type=index, value=raised",
-        "@Tcl_Obj: type=index, value=flat"
+        "@Tcl_Obj: type=string, value=flat"
       ]
     ],
     "selectcolor": [
       "@different:3",
       [
-        "@Tcl_Obj: type=color, value=#abcdef",
         "@Tcl_Obj: type=color, value=#000000",
+        "@Tcl_Obj: type=color, value=#abcdef",
         "@Tcl_Obj: type=color, value=SystemMenuText"
       ]
     ],
@@ -1069,10 +1083,11 @@
     "tearoffcommand": "",
     "title": "",
     "type": [
-      "@different:2",
+      "@typeDiff:2",
+      "normal",
       [
-        "@Tcl_Obj: type=string, value=normal",
-        "@Tcl_Obj: type=index, value=normal"
+        "index",
+        "string"
       ]
     ]
   },
@@ -1080,32 +1095,32 @@
     "activebackground": [
       "@different:3",
       [
-        "SystemButtonFace",
         "#ececec",
+        "SystemButtonFace",
         "systemWindowBackgroundColor"
       ]
     ],
     "activeforeground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
     "anchor": [
       "@different:2",
       [
-        "w",
-        "center"
+        "center",
+        "w"
       ]
     ],
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": [
@@ -1118,9 +1133,9 @@
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bitmap": "",
@@ -1137,15 +1152,15 @@
     "disabledforeground": [
       "@different:2",
       [
-        "SystemDisabledText",
-        "#a3a3a3"
+        "#a3a3a3",
+        "SystemDisabledText"
       ]
     ],
     "fg": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -1153,8 +1168,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -1162,9 +1177,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -1222,18 +1237,18 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": 1,
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "borderwidth": 1,
@@ -1241,8 +1256,8 @@
     "fg": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -1250,17 +1265,17 @@
     "foreground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -1274,17 +1289,19 @@
     "highlightthickness": 0,
     "justify": "left",
     "padx": [
-      "@different:2",
+      "@typeDiff:2",
+      "-1",
       [
-        "@Tcl_Obj: type=string, value=-1",
-        "@Tcl_Obj: type=pixel, value=-1"
+        "pixel",
+        "string"
       ]
     ],
     "pady": [
-      "@different:2",
+      "@typeDiff:2",
+      "-1",
       [
-        "@Tcl_Obj: type=string, value=-1",
-        "@Tcl_Obj: type=pixel, value=-1"
+        "pixel",
+        "string"
       ]
     ],
     "relief": "flat",
@@ -1297,28 +1314,29 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": 1,
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "borderwidth": 1,
     "cursor": "",
     "handlepad": 8,
     "handlesize": [
-      "@different:2",
+      "@typeDiff:2",
+      "8",
       [
-        "@Tcl_Obj: type=string, value=8",
-        "@Tcl_Obj: type=pixel, value=8"
+        "pixel",
+        "string"
       ]
     ],
     "height": "",
@@ -1326,10 +1344,11 @@
     "orient": "horizontal",
     "proxybackground": "",
     "proxyborderwidth": [
-      "@different:2",
+      "@typeDiff:2",
+      "2",
       [
-        "@Tcl_Obj: type=string, value=2",
-        "@Tcl_Obj: type=pixel, value=2"
+        "pixel",
+        "string"
       ]
     ],
     "proxyrelief": "flat",
@@ -1338,10 +1357,11 @@
     "sashpad": 0,
     "sashrelief": "flat",
     "sashwidth": [
-      "@different:2",
+      "@typeDiff:2",
+      "3",
       [
-        "@Tcl_Obj: type=string, value=3",
-        "@Tcl_Obj: type=pixel, value=3"
+        "pixel",
+        "string"
       ]
     ],
     "showhandle": 0,
@@ -1351,16 +1371,16 @@
     "activebackground": [
       "@different:3",
       [
-        "SystemButtonFace",
         "#ececec",
+        "SystemButtonFace",
         "systemWindowBackgroundColor"
       ]
     ],
     "activeforeground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1368,34 +1388,34 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=2",
         "@Tcl_Obj: type=pixel, value=1",
-        "@Tcl_Obj: type=pixel, value=2"
+        "@Tcl_Obj: type=pixel, value=2",
+        "@Tcl_Obj: type=string, value=2"
       ]
     ],
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bitmap": "",
     "borderwidth": [
       "@different:3",
       [
-        "@Tcl_Obj: type=string, value=2",
         "@Tcl_Obj: type=pixel, value=1",
-        "@Tcl_Obj: type=pixel, value=2"
+        "@Tcl_Obj: type=pixel, value=2",
+        "@Tcl_Obj: type=string, value=2"
       ]
     ],
     "command": "",
@@ -1404,15 +1424,15 @@
     "disabledforeground": [
       "@different:2",
       [
-        "SystemDisabledText",
-        "#a3a3a3"
+        "#a3a3a3",
+        "SystemDisabledText"
       ]
     ],
     "fg": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1420,8 +1440,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1429,9 +1449,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -1443,10 +1463,11 @@
       ]
     ],
     "highlightthickness": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "image": "",
@@ -1461,26 +1482,28 @@
     ],
     "overrelief": "",
     "padx": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "pady": [
-      "@different:2",
+      "@typeDiff:2",
+      "1",
       [
-        "@Tcl_Obj: type=string, value=1",
-        "@Tcl_Obj: type=pixel, value=1"
+        "pixel",
+        "string"
       ]
     ],
     "relief": "flat",
     "selectcolor": [
       "@different:3",
       [
+        "#b03060",
         "#ffffff",
-        "SystemWindow",
-        "#b03060"
+        "SystemWindow"
       ]
     ],
     "selectimage": "",
@@ -1493,18 +1516,20 @@
     "underline": -1,
     "value": "",
     "variable": [
-      "@different:2",
+      "@typeDiff:2",
+      "selectedButton",
       [
-        "@Tcl_Obj: type=string, value=selectedButton",
-        "@Tcl_Obj: type=parsedVarName, value=selectedButton"
+        "parsedVarName",
+        "string"
       ]
     ],
     "width": 0,
     "wraplength": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ]
   },
@@ -1512,26 +1537,26 @@
     "activebackground": [
       "@different:3",
       [
-        "SystemButtonFace",
         "#ececec",
+        "SystemButtonFace",
         "systemWindowBackgroundColor"
       ]
     ],
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": 1,
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bigincrement": 0.0,
@@ -1542,8 +1567,8 @@
     "fg": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -1551,8 +1576,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemButtonText",
         "#000000",
+        "SystemButtonText",
         "systemTextColor"
       ]
     ],
@@ -1560,9 +1585,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -1599,8 +1624,8 @@
       "@different:3",
       [
         "#b3b3b3",
-        "SystemScrollbar",
-        "#c3c3c3"
+        "#c3c3c3",
+        "SystemScrollbar"
       ]
     ],
     "variable": "",
@@ -1610,8 +1635,8 @@
     "activebackground": [
       "@different:3",
       [
-        "SystemButtonFace",
         "#ececec",
+        "SystemButtonFace",
         "systemWindowBackgroundColor"
       ]
     ],
@@ -1619,31 +1644,31 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": [
       "@different:2",
       [
-        "1",
-        "0"
+        "0",
+        "1"
       ]
     ],
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "borderwidth": [
       "@different:2",
       [
-        "1",
-        "0"
+        "0",
+        "1"
       ]
     ],
     "command": "",
@@ -1652,9 +1677,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -1671,8 +1696,8 @@
     "relief": [
       "@different:2",
       [
-        "sunken",
-        "flat"
+        "flat",
+        "sunken"
       ]
     ],
     "repeatdelay": "300",
@@ -1682,8 +1707,8 @@
       "@different:3",
       [
         "#b3b3b3",
-        "SystemScrollbar",
-        "#c3c3c3"
+        "#c3c3c3",
+        "SystemScrollbar"
       ]
     ],
     "width": [
@@ -1699,17 +1724,17 @@
     "activebackground": [
       "@different:3",
       [
-        "SystemButtonFace",
         "#ececec",
+        "SystemButtonFace",
         "systemWindowBackgroundColor"
       ]
     ],
     "background": [
       "@different:3",
       [
-        "systemTextBackgroundColor",
         "#ffffff",
-        "SystemWindow"
+        "SystemWindow",
+        "systemTextBackgroundColor"
       ]
     ],
     "bd": [
@@ -1722,9 +1747,9 @@
     "bg": [
       "@different:3",
       [
-        "systemTextBackgroundColor",
         "#ffffff",
-        "SystemWindow"
+        "SystemWindow",
+        "systemTextBackgroundColor"
       ]
     ],
     "borderwidth": [
@@ -1737,9 +1762,9 @@
     "buttonbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "buttoncursor": "",
@@ -1762,24 +1787,24 @@
     "disabledbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "disabledforeground": [
       "@different:2",
       [
-        "SystemDisabledText",
-        "#a3a3a3"
+        "#a3a3a3",
+        "SystemDisabledText"
       ]
     ],
     "exportselection": 1,
     "fg": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1787,8 +1812,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1797,9 +1822,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -1822,8 +1847,8 @@
     "insertbackground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1843,9 +1868,9 @@
     "readonlybackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "relief": "sunken",
@@ -1854,8 +1879,8 @@
     "selectbackground": [
       "@different:3",
       [
-        "SystemHighlight",
         "#c3c3c3",
+        "SystemHighlight",
         "systemSelectedTextBackgroundColor"
       ]
     ],
@@ -1869,9 +1894,9 @@
     "selectforeground": [
       "@different:3",
       [
-        "systemSelectedTextColor",
         "#000000",
-        "SystemHighlightText"
+        "SystemHighlightText",
+        "systemSelectedTextColor"
       ]
     ],
     "state": "normal",
@@ -1891,9 +1916,9 @@
     "background": [
       "@different:3",
       [
-        "systemTextBackgroundColor",
         "#ffffff",
-        "SystemWindow"
+        "SystemWindow",
+        "systemTextBackgroundColor"
       ]
     ],
     "bd": [
@@ -1906,9 +1931,9 @@
     "bg": [
       "@different:3",
       [
-        "systemTextBackgroundColor",
         "#ffffff",
-        "SystemWindow"
+        "SystemWindow",
+        "systemTextBackgroundColor"
       ]
     ],
     "blockcursor": 0,
@@ -1925,8 +1950,8 @@
     "fg": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1934,8 +1959,8 @@
     "foreground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1943,9 +1968,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -1975,8 +2000,8 @@
     "insertbackground": [
       "@different:3",
       [
-        "SystemWindowText",
         "#000000",
+        "SystemWindowText",
         "systemTextColor"
       ]
     ],
@@ -1997,15 +2022,15 @@
     "relief": [
       "@different:2",
       [
-        "sunken",
-        "flat"
+        "flat",
+        "sunken"
       ]
     ],
     "selectbackground": [
       "@different:3",
       [
-        "SystemHighlight",
         "#c3c3c3",
+        "SystemHighlight",
         "systemSelectedTextBackgroundColor"
       ]
     ],
@@ -2020,9 +2045,9 @@
     "selectforeground": [
       "@different:3",
       [
-        "systemSelectedTextColor",
         "#000000",
-        "SystemHighlightText"
+        "SystemHighlightText",
+        "systemSelectedTextColor"
       ]
     ],
     "setgrid": 0,
@@ -2044,18 +2069,18 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": 0,
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "borderwidth": 0,
@@ -2067,9 +2092,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -2083,17 +2108,19 @@
     "highlightthickness": 0,
     "menu": "",
     "padx": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "pady": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "relief": "flat",
@@ -2107,18 +2134,18 @@
     "background": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "bd": 0,
     "bg": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "borderwidth": 0,
@@ -2130,9 +2157,9 @@
     "highlightbackground": [
       "@different:3",
       [
+        "#d9d9d9",
         "SystemButtonFace",
-        "systemWindowBackgroundColor",
-        "#d9d9d9"
+        "systemWindowBackgroundColor"
       ]
     ],
     "highlightcolor": [
@@ -2146,17 +2173,19 @@
     "highlightthickness": 0,
     "menu": "",
     "padx": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "pady": [
-      "@different:2",
+      "@typeDiff:2",
+      "0",
       [
-        "@Tcl_Obj: type=pixel, value=0",
-        "@Tcl_Obj: type=string, value=0"
+        "pixel",
+        "string"
       ]
     ],
     "relief": "flat",
