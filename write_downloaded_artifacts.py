@@ -38,8 +38,7 @@ def write_artifact(name: str, data: JsonT):
         return writefile_json(path, data, mode='x')
     assert path.is_file()
     would_write = json.dumps(data)
-    actual_data = readfile_json(path)
-    if json_str_eq(would_write, actual_data):
+    if json_str_eq(would_write, readfile(path)):
         return
     warnings.warn(RuntimeWarning(
         "Tried to write artifact to file that already exists and if different!"
