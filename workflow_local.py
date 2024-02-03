@@ -7,7 +7,7 @@ def main():
     write_curr_defaults.run()
     print('Merging defaults...')
     merge_defaults.main()
-    print('Done, no significant errors!')
+    print('Done, no errors!')
 
 
 if __name__ == '__main__':

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import platform
 import sys
 from os import PathLike
@@ -39,6 +40,15 @@ def get_arch_key():
 OUT_PATH_FMT = 'tkinter_defaults/default{n}__{plat}.json'
 
 
+def _normalize_json_str(s: str):
+    # no indent so no newlines cross-platform issues
+    return json.dumps(json.loads(s), sort_keys=True)
+
+
+def _json_str_eq(a: str, b: str) -> bool:
+    return _normalize_json_str(a).strip() == _normalize_json_str(b).strip()
+
+
 def _find_available_path(result: str, check_overwrite=True) -> tuple[Path, Path | None]:
     """Return tuple of (path of result [NOT None], path to write to [or None])"""
     def get_out_path():
@@ -51,12 +61,14 @@ def _find_available_path(result: str, check_overwrite=True) -> tuple[Path, Path 
         return out_path, out_path
     while n < 1_000:
         if not out_path.exists():
+            print(f'[DEBUG] Found space at {n=}')
             return out_path, out_path  # free path, write here
         orig = _readfile(out_path)
-        if orig.strip() == result.strip():
+        if _json_str_eq(orig, result):
             # same result so no write but still return path to find it at
+            print(f'[DEBUG] Found matching at {n=}')
             return out_path, None
-        print(f'Compared to {n=}, no match')
+        print(f'[DEBUG] Compared to {n=}, no match')
         n += 1
         out_path = get_out_path()
     raise TimeoutError("Checked 1000 paths, none available. "
