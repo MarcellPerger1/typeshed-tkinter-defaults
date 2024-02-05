@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import os
 import sys
@@ -72,14 +74,23 @@ def get_defaults():
                 debug(f'SKIP key {name!r}: '
                       f'no 0-arg or 1-arg __init__')
                 continue
+        # help Pycharm understand that `defaults` MUST be defined as
+        # `for _ in range(5)` always runs at least once! see PY-57569, PY-3344
+        defaults: dict | None = None
         try:
-            defaults = dict(inst)
+            # Repeat a few times, use last one because the first time,
+            # values stay as Tcl_Obj but tkinter then realises that it
+            # needs to convert it to python types
+            for _ in range(5):
+                defaults = dict(inst)
         except (NotImplementedError, TypeError, ValueError, AttributeError):
             debug(f'INFO key {name!r} '
                   f'(inst={short_repr(inst)}): cannot convert to dict')
             # try another way
+            options_list = None
             try:
-                options_list = inst.configure()
+                for _ in range(5):
+                    options_list = inst.configure()
             except (NotImplementedError, TypeError, ValueError, AttributeError):
                 debug(f'SKIP key {name!r} (inst={short_repr(inst)}): '
                       f'cannot configure 0-arg')
@@ -91,6 +102,7 @@ def get_defaults():
                 debug(f'SKIP key {name!r} ('
                       f'inst={short_repr(inst)}): bad configure() output')
                 continue
+        assert defaults is not None
         debug(f'Success key {name!r} (type={short_repr(value)}, '
               f'inst={short_repr(inst)}): defaults={short_repr(defaults, 40)}')
         out[name] = defaults
