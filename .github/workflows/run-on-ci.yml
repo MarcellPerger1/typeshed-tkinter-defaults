@@ -86,7 +86,13 @@ jobs:
         pyenv which python
         PYLOCATION=$(pyenv which python)
         PYDIR=$(dirname "$PYLOCATION")
+        echo "PYDIR: $PYDIR"
         echo "$PYDIR" >> "$GITHUB_PATH"
+        whereis python
+        whereis python3
+        echo $PATH
+        python --version
+        export PATH="$PYDIR:$PATH"
         whereis python
         whereis python3
         echo $PATH
