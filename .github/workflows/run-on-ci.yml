@@ -60,6 +60,8 @@ jobs:
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
       run: |
+        whereis python
+        whereis python3
         # Install the python@3.{11,12} dependency directly so we can specify --overwrite
         brew install --overwrite python@3.11 python@3.12
         echo "[NOTICE] Installed python"
