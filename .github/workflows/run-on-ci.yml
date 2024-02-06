@@ -62,7 +62,7 @@ jobs:
       run: |
         # Install the python@3.{11,12} dependency directly so we can specify --overwrite
         brew install --overwrite python@3.11 python@3.12
-        echo "[INFO] Installed python"
+        echo "[NOTICE] Installed python"
         brew install --overwrite tcl-tk pyenv openssl readline sqlite3 xz zlib
     - name: (MacOS, <3.11) Install python with working tkinter
       shell: bash
@@ -76,6 +76,8 @@ jobs:
           CFLAGS="-I$(brew --prefix tcl-tk)/include" \
           PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I$(brew --prefix tcl-tk)/include' --with-tcltk-libs='-L$(brew --prefix tcl-tk)/lib -ltcl8.6 -ltk8.6'" \
           pyenv install ${{matrix.python-version}}
+        # Unlink these so we use the pyenv version, not the latest
+        brew unlink python@3.11 python@3.12
         pyenv global ${{matrix.python-version}}
     - name: Run python script (with fallbacks)
       id: run_main
