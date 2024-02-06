@@ -26,8 +26,9 @@
       ]
     ],
     "bd": [
-      "@different:3",
+      "@different:4",
       [
+        "2",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=2",
         "@Tcl_Obj: type=string, value=2"
@@ -43,8 +44,9 @@
     ],
     "bitmap": "",
     "borderwidth": [
-      "@different:3",
+      "@different:4",
       [
+        "2",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=2",
         "@Tcl_Obj: type=string, value=2"
@@ -96,9 +98,10 @@
       ]
     ],
     "highlightthickness": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -107,16 +110,18 @@
     "justify": "center",
     "overrelief": "",
     "padx": [
-      "@different:3",
+      "@different:4",
       [
+        "1",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=3m",
         "@Tcl_Obj: type=string, value=1"
       ]
     ],
     "pady": [
-      "@different:3",
+      "@different:4",
       [
+        "1",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=1m",
         "@Tcl_Obj: type=string, value=1"
@@ -138,9 +143,10 @@
     "underline": -1,
     "width": 0,
     "wraplength": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -276,8 +282,9 @@
       ]
     ],
     "bd": [
-      "@different:3",
+      "@different:4",
       [
+        "2",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=2",
         "@Tcl_Obj: type=string, value=2"
@@ -293,8 +300,9 @@
     ],
     "bitmap": "",
     "borderwidth": [
-      "@different:3",
+      "@different:4",
       [
+        "2",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=2",
         "@Tcl_Obj: type=string, value=2"
@@ -345,9 +353,10 @@
       ]
     ],
     "highlightthickness": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -366,17 +375,19 @@
     "onvalue": "1",
     "overrelief": "",
     "padx": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
     ],
     "pady": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -399,8 +410,9 @@
     "tristatevalue": "",
     "underline": -1,
     "variable": [
-      "@different:4",
+      "@different:5",
       [
+        "!checkbutton1",
         "@Tcl_Obj: type=parsedVarName, value=!checkbutton",
         "@Tcl_Obj: type=parsedVarName, value=!checkbutton1",
         "@Tcl_Obj: type=string, value=!checkbutton",
@@ -409,9 +421,10 @@
     ],
     "width": 0,
     "wraplength": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -611,17 +624,19 @@
     ],
     "highlightthickness": 0,
     "padx": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
     ],
     "pady": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -658,8 +673,9 @@
       ]
     ],
     "bd": [
-      "@different:3",
+      "@different:4",
       [
+        "2",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=2",
         "@Tcl_Obj: type=string, value=2"
@@ -675,8 +691,9 @@
     ],
     "bitmap": "",
     "borderwidth": [
-      "@different:3",
+      "@different:4",
       [
+        "2",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=2",
         "@Tcl_Obj: type=string, value=2"
@@ -726,9 +743,10 @@
       ]
     ],
     "highlightthickness": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -736,17 +754,19 @@
     "image": "",
     "justify": "center",
     "padx": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
     ],
     "pady": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -759,9 +779,10 @@
     "underline": -1,
     "width": 0,
     "wraplength": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -828,17 +849,19 @@
     "labelanchor": "nw",
     "labelwidget": "",
     "padx": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
     ],
     "pady": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -967,11 +990,12 @@
   },
   "Menu": {
     "activebackground": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=border, value=#abcdef",
         "@Tcl_Obj: type=border, value=#ececec",
-        "@Tcl_Obj: type=border, value=SystemHighlight"
+        "@Tcl_Obj: type=border, value=SystemHighlight",
+        "SystemHighlight"
       ]
     ],
     "activeborderwidth": [
@@ -983,19 +1007,21 @@
       ]
     ],
     "activeforeground": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=color, value=#000000",
         "@Tcl_Obj: type=color, value=#abcdef",
-        "@Tcl_Obj: type=color, value=SystemHighlightText"
+        "@Tcl_Obj: type=color, value=SystemHighlightText",
+        "SystemHighlightText"
       ]
     ],
     "background": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=border, value=#000001",
         "@Tcl_Obj: type=border, value=#d9d9d9",
-        "@Tcl_Obj: type=border, value=SystemMenu"
+        "@Tcl_Obj: type=border, value=SystemMenu",
+        "SystemMenu"
       ]
     ],
     "bd": [
@@ -1007,11 +1033,12 @@
       ]
     ],
     "bg": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=border, value=#000001",
         "@Tcl_Obj: type=border, value=#d9d9d9",
-        "@Tcl_Obj: type=string, value=SystemMenu"
+        "@Tcl_Obj: type=string, value=SystemMenu",
+        "SystemMenu"
       ]
     ],
     "borderwidth": [
@@ -1022,54 +1049,67 @@
         "@Tcl_Obj: type=pixel, value=1"
       ]
     ],
-    "cursor": "@Tcl_Obj: type=cursor, value=arrow",
+    "cursor": [
+      "@typeDiff:2",
+      "arrow",
+      [
+        "@Py_str",
+        "cursor"
+      ]
+    ],
     "disabledforeground": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=color, value=#a3a3a3",
         "@Tcl_Obj: type=color, value=#abcdef",
-        "@Tcl_Obj: type=color, value=SystemDisabledText"
+        "@Tcl_Obj: type=color, value=SystemDisabledText",
+        "SystemDisabledText"
       ]
     ],
     "fg": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=color, value=#000000",
         "@Tcl_Obj: type=color, value=#010000",
-        "@Tcl_Obj: type=color, value=SystemMenuText"
+        "@Tcl_Obj: type=color, value=SystemMenuText",
+        "SystemMenuText"
       ]
     ],
     "font": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=font, value=TkMenuFont",
         "@Tcl_Obj: type=font, value=menu",
-        "@Tcl_Obj: type=font, value={Segoe UI} 9"
+        "@Tcl_Obj: type=font, value={Segoe UI} 9",
+        "{Segoe UI} 9"
       ]
     ],
     "foreground": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=color, value=#000000",
         "@Tcl_Obj: type=color, value=#010000",
-        "@Tcl_Obj: type=string, value=SystemMenuText"
+        "@Tcl_Obj: type=string, value=SystemMenuText",
+        "SystemMenuText"
       ]
     ],
     "postcommand": "",
     "relief": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=index, value=flat",
         "@Tcl_Obj: type=index, value=raised",
-        "@Tcl_Obj: type=string, value=flat"
+        "@Tcl_Obj: type=string, value=flat",
+        "flat"
       ]
     ],
     "selectcolor": [
-      "@different:3",
+      "@different:4",
       [
         "@Tcl_Obj: type=color, value=#000000",
         "@Tcl_Obj: type=color, value=#abcdef",
-        "@Tcl_Obj: type=color, value=SystemMenuText"
+        "@Tcl_Obj: type=color, value=SystemMenuText",
+        "SystemMenuText"
       ]
     ],
     "takefocus": "0",
@@ -1083,9 +1123,10 @@
     "tearoffcommand": "",
     "title": "",
     "type": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "normal",
       [
+        "@Py_str",
         "index",
         "string"
       ]
@@ -1289,17 +1330,19 @@
     "highlightthickness": 0,
     "justify": "left",
     "padx": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "-1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
     ],
     "pady": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "-1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -1332,9 +1375,10 @@
     "cursor": "",
     "handlepad": 8,
     "handlesize": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "8",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -1344,9 +1388,10 @@
     "orient": "horizontal",
     "proxybackground": "",
     "proxyborderwidth": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "2",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -1357,9 +1402,10 @@
     "sashpad": 0,
     "sashrelief": "flat",
     "sashwidth": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "3",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -1394,8 +1440,9 @@
       ]
     ],
     "bd": [
-      "@different:3",
+      "@different:4",
       [
+        "2",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=2",
         "@Tcl_Obj: type=string, value=2"
@@ -1411,8 +1458,9 @@
     ],
     "bitmap": "",
     "borderwidth": [
-      "@different:3",
+      "@different:4",
       [
+        "2",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=pixel, value=2",
         "@Tcl_Obj: type=string, value=2"
@@ -1463,9 +1511,10 @@
       ]
     ],
     "highlightthickness": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -1482,17 +1531,19 @@
     ],
     "overrelief": "",
     "padx": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
     ],
     "pady": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "1",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -1516,18 +1567,20 @@
     "underline": -1,
     "value": "",
     "variable": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "selectedButton",
       [
+        "@Py_str",
         "parsedVarName",
         "string"
       ]
     ],
     "width": 0,
     "wraplength": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -2035,8 +2088,9 @@
       ]
     ],
     "selectborderwidth": [
-      "@different:3",
+      "@different:4",
       [
+        "0",
         "@Tcl_Obj: type=pixel, value=0",
         "@Tcl_Obj: type=pixel, value=1",
         "@Tcl_Obj: type=string, value=0"
@@ -2108,17 +2162,19 @@
     "highlightthickness": 0,
     "menu": "",
     "padx": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
     ],
     "pady": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
@@ -2173,17 +2229,19 @@
     "highlightthickness": 0,
     "menu": "",
     "padx": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]
     ],
     "pady": [
-      "@typeDiff:2",
+      "@typeDiff:3",
       "0",
       [
+        "@Py_str",
         "pixel",
         "string"
       ]

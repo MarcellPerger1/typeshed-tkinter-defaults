@@ -168,7 +168,7 @@
     "yscrollcommand": ""
   },
   "Menu": {
-    "cursor": "@Tcl_Obj: type=cursor, value=arrow",
+    "cursor": "arrow    @typeDiff",
     "postcommand": "",
     "takefocus": "0",
     "tearoffcommand": "",
