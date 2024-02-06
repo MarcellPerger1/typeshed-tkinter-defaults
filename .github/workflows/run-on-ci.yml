@@ -84,7 +84,9 @@ jobs:
         brew unlink python@3.11 python@3.12
         pyenv global ${{matrix.python-version}}
         pyenv which python
-        echo "$(pyenv which python)" >> "$GITHUB_PATH"
+        PYLOCATION=$(pyenv which python)
+        PYDIR=$(dirname "$PYLOCATION")
+        echo "$PYDIR" >> "$GITHUB_PATH"
         whereis python
         whereis python3
         echo $PATH
