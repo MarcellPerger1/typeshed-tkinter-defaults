@@ -62,6 +62,8 @@ jobs:
       run: |
         whereis python
         whereis python3
+        echo $PATH
+        python --version
         # Install the python@3.{11,12} dependency directly so we can specify --overwrite
         brew install --overwrite python@3.11 python@3.12
         echo "[NOTICE] Installed python"
@@ -81,6 +83,10 @@ jobs:
         # Unlink these so we use the pyenv version, not the latest
         brew unlink python@3.11 python@3.12
         pyenv global ${{matrix.python-version}}
+        whereis python
+        whereis python3
+        echo $PATH
+        python --version
     - name: Run python script (with fallbacks)
       id: run_main
       shell: bash {0}
