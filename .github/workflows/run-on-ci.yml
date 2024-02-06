@@ -83,8 +83,8 @@ jobs:
         # Unlink these so we use the pyenv version, not the latest
         brew unlink python@3.11 python@3.12
         pyenv global ${{matrix.python-version}}
-        pyenv whereis python
-        echo "$(pyenv whereis python)" >> "$GITHUB_PATH"
+        pyenv which python
+        echo "$(pyenv which python)" >> "$GITHUB_PATH"
         whereis python
         whereis python3
         echo $PATH
