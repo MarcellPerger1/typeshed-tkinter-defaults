@@ -72,6 +72,7 @@ jobs:
         echo "Located at $(whereis python)"
         echo "With PATH = $PATH"
         PY_PKG="python-tk@${{ matrix.python-version }}"
+        PY_PKG_PY="python@${{ matrix.python-version }}"
         brew install --overwrite $PY_PKG
         brew link --overwrite $PY_PKG
         echo "[DEBUG] Installed python from brew"
@@ -79,8 +80,10 @@ jobs:
         echo "Located at $(whereis python)"
         echo "With PATH = $PATH"
         PY_PATH=$(brew --prefix $PY_PKG)
+        PY_PATH_PY=$(brew --prefix $PY_PKG_PY)
         echo "$PY_PATH" >> "$GITHUB_PATH"
-        export PATH="$PY_PATH:$PATH"
+        echo "$PY_PATH_PY" >> "$GITHUB_PATH"
+        export PATH="$PY_PATH:$PY_PATH_PY:$PATH"
         ls "$PY_PATH/libexec"
         whereis python3
         python3 --version
