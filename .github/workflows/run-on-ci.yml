@@ -81,7 +81,8 @@ jobs:
           PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I$(brew --prefix tcl-tk)/include' --with-tcltk-libs='-L$(brew --prefix tcl-tk)/lib -ltcl8.6 -ltk8.6'" \
           pyenv install ${{matrix.python-version}}
         # Unlink these so we use the pyenv version, not the latest
-        brew unlink python@3.11 python@3.12
+        brew uninstall python@3.11 python@3.12
+        brew install --overwrite tcl-tk
         PATH="$(brew --prefix tcl-tk)/bin:$PATH" pyenv global ${{matrix.python-version}}
         pyenv which python
         PYLOCATION=$(pyenv which python)
