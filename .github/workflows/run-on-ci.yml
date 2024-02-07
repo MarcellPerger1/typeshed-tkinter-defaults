@@ -68,7 +68,7 @@ jobs:
         #brew install --overwrite python@3.11 python@3.12
         #echo "[NOTICE] Installed python"
         # brew install --overwrite tcl-tk pyenv openssl readline sqlite3 xz zlib
-        brew install --overwrite python@${matrix.python-version}
+        brew install --overwrite python@${{ matrix.python-version }}
     - name: (MacOS, <3.11) Install python with working tkinter
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
