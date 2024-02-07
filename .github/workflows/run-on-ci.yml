@@ -87,6 +87,7 @@ jobs:
         PYLOCATION=$(pyenv which python)
         PYDIR=$(dirname "$PYLOCATION")
         echo "PYDIR: $PYDIR"
+        pyenv global ${{matrix.python-version}}
         echo "$PYDIR" >> "$GITHUB_PATH"
         whereis python
         whereis python3
@@ -101,6 +102,9 @@ jobs:
       id: run_main
       shell: bash {0}
       run: |
+        echo "Running on $(python --version)"
+        echo "Located at $(whereis python)"
+        echo "With PATH = $PATH"
         EXIT_XVFB=9
         EXIT_FALLBACK=9
         echo "Running normally"
