@@ -82,18 +82,18 @@ jobs:
           pyenv install ${{matrix.python-version}}
         # Unlink these so we use the pyenv version, not the latest
         brew unlink python@3.11 python@3.12
-        pyenv global ${{matrix.python-version}}
+        PATH="$(brew --prefix tcl-tk)/bin:$PATH" pyenv global ${{matrix.python-version}}
         pyenv which python
         PYLOCATION=$(pyenv which python)
         PYDIR=$(dirname "$PYLOCATION")
         echo "PYDIR: $PYDIR"
-        pyenv global ${{matrix.python-version}}
+        PATH="$(brew --prefix tcl-tk)/bin:$PATH" pyenv global ${{matrix.python-version}}
         echo "$PYDIR" >> "$GITHUB_PATH"
         whereis python
         whereis python3
         echo $PATH
         python --version
-        export PATH="$PYDIR:$PATH"
+        export PATH="$(brew --prefix tcl-tk)/bin:$PYDIR:$PATH"
         whereis python
         whereis python3
         echo $PATH
