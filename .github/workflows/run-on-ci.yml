@@ -60,6 +60,7 @@ jobs:
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
       run: |
+        export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
         whereis python
         whereis python3
         echo $PATH
