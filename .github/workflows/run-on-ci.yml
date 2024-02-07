@@ -81,7 +81,7 @@ jobs:
         echo "Located at $(whereis python)"
         echo "With PATH = $PATH"
         PY_PATH=$(brew --prefix $PY_PKG)
-        PY_PATH_PY=$(brew --prefix $PY_PKG_PY)
+        PY_PATH_PY="$(brew --prefix $PY_PKG_PY)/libexec/bin"
         echo "$PY_PATH" >> "$GITHUB_PATH"
         echo "$PY_PATH_PY" >> "$GITHUB_PATH"
         export PATH="$PY_PATH:$PY_PATH_PY:$PATH"
