@@ -65,41 +65,42 @@ jobs:
         echo $PATH
         python --version
         # Install the python@3.{11,12} dependency directly so we can specify --overwrite
-        brew install --overwrite python@3.11 python@3.12
-        echo "[NOTICE] Installed python"
-        brew install --overwrite tcl-tk pyenv openssl readline sqlite3 xz zlib
+        #brew install --overwrite python@3.11 python@3.12
+        #echo "[NOTICE] Installed python"
+        # brew install --overwrite tcl-tk pyenv openssl readline sqlite3 xz zlib
+        brew install --overwrite python@${matrix.python-version}
     - name: (MacOS, <3.11) Install python with working tkinter
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
       run: |
-        env \
-          PATH="$(brew --prefix tcl-tk)/bin:$PATH" \
-          LDFLAGS="-L$(brew --prefix tcl-tk)/lib" \
-          CPPFLAGS="-I$(brew --prefix tcl-tk)/include" \
-          PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
-          CFLAGS="-I$(brew --prefix tcl-tk)/include" \
-          PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I$(brew --prefix tcl-tk)/include' --with-tcltk-libs='-L$(brew --prefix tcl-tk)/lib -ltcl8.6 -ltk8.6'" \
-          pyenv install ${{matrix.python-version}}
+        #env \
+        #  PATH="$(brew --prefix tcl-tk)/bin:$PATH" \
+        #  LDFLAGS="-L$(brew --prefix tcl-tk)/lib" \
+        #  CPPFLAGS="-I$(brew --prefix tcl-tk)/include" \
+        #  PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig" \
+        #  CFLAGS="-I$(brew --prefix tcl-tk)/include" \
+        #  PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I$(brew --prefix tcl-tk)/include' --with-tcltk-libs='-L$(brew --prefix tcl-tk)/lib -ltcl8.6 -ltk8.6'" \
+        #  pyenv install ${{matrix.python-version}}
         # Unlink these so we use the pyenv version, not the latest
-        brew uninstall python@3.11 python@3.12
-        brew install --overwrite tcl-tk
-        PATH="$(brew --prefix tcl-tk)/bin:$PATH" pyenv global ${{matrix.python-version}}
-        pyenv which python
-        PYLOCATION=$(pyenv which python)
-        PYDIR=$(dirname "$PYLOCATION")
-        echo "PYDIR: $PYDIR"
-        PATH="$(brew --prefix tcl-tk)/bin:$PATH" pyenv global ${{matrix.python-version}}
-        echo "$PYDIR" >> "$GITHUB_PATH"
-        echo "$(brew --prefix tcl-tk)/bin" >> "$GITHUB_PATH"
+        # brew unlink python@3.11 python@3.12
+        # brew install --overwrite tcl-tk
+        # PATH="$(brew --prefix tcl-tk)/bin:$PATH" pyenv global ${{matrix.python-version}}
+        #pyenv which python
+        #PYLOCATION=$(pyenv which python)
+        #PYDIR=$(dirname "$PYLOCATION")
+        #echo "PYDIR: $PYDIR"
+        #PATH="$(brew --prefix tcl-tk)/bin:$PATH" pyenv global ${{matrix.python-version}}
+        #echo "$PYDIR" >> "$GITHUB_PATH"
+        #echo "$(brew --prefix tcl-tk)/bin" >> "$GITHUB_PATH"
         whereis python
         whereis python3
         echo $PATH
         python --version
-        export PATH="$(brew --prefix tcl-tk)/bin:$PYDIR:$PATH"
-        whereis python
-        whereis python3
-        echo $PATH
-        python --version
+        #export PATH="$(brew --prefix tcl-tk)/bin:$PYDIR:$PATH"
+        #whereis python
+        #whereis python3
+        #echo $PATH
+        #python --version
     - name: Run python script (with fallbacks)
       id: run_main
       shell: bash {0}
