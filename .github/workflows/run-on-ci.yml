@@ -89,6 +89,7 @@ jobs:
         echo "PYDIR: $PYDIR"
         PATH="$(brew --prefix tcl-tk)/bin:$PATH" pyenv global ${{matrix.python-version}}
         echo "$PYDIR" >> "$GITHUB_PATH"
+        echo "$(brew --prefix tcl-tk)/bin" >> "$GITHUB_PATH"
         whereis python
         whereis python3
         echo $PATH
