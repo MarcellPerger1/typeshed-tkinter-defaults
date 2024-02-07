@@ -79,7 +79,7 @@ jobs:
         echo "Located at $(whereis python)"
         echo "With PATH = $PATH"
         PYVER_S=$(python --version)
-        if [[ ! $PYVER_S ~= "Python ${{ matrix.python-version }}." ]] ; then
+        if [[ ! $PYVER_S =~ "Python ${{ matrix.python-version }}." ]] ; then
           echo "[ERROR] Using wrong python version"
           exit 1
         fi
