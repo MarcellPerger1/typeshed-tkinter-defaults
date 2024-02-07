@@ -73,6 +73,7 @@ jobs:
         echo "With PATH = $PATH"
         PY_PKG="python-tk@${{ matrix.python-version }}"
         brew install --overwrite $PY_PKG
+        brew link --overwrite $PY_PKG
         echo "[DEBUG] Installed python from brew"
         echo "Running on $(python --version)"
         echo "Located at $(whereis python)"
@@ -80,6 +81,7 @@ jobs:
         PY_PATH=$(brew --prefix $PY_PKG)
         echo "$PY_PATH" >> "$GITHUB_PATH"
         export PATH="$PY_PATH:$PATH"
+        ls "$PY_PATH"
         echo "[DEBUG] Updated path"
         echo "Running on $(python --version)"
         echo "Located at $(whereis python)"
