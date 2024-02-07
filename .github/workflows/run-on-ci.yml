@@ -82,6 +82,8 @@ jobs:
         echo "$PY_PATH" >> "$GITHUB_PATH"
         export PATH="$PY_PATH:$PATH"
         ls "$PY_PATH/libexec"
+        whereis python3
+        python3 --version
         echo "[DEBUG] Updated path"
         echo "Running on $(python --version)"
         echo "Located at $(whereis python)"
