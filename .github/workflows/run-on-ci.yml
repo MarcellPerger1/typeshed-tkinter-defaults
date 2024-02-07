@@ -5,7 +5,7 @@ on:
     inputs:
       full:
         type: boolean
-        description: Do a slower full run (5 minutes)?
+        description: Do a slower full run (10 minutes)?
         default: false
 
 jobs:
@@ -27,22 +27,10 @@ jobs:
           - ${{ inputs.full }}
         exclude:
           - do-full: false
-            os: macos-latest
-            python-version: "3.9"
-          - do-full: false
             os: macos-11
             python-version: "3.9"
           - do-full: false
-            os: macos-13
-            python-version: "3.9"
-          - do-full: false
-            os: macos-latest
-            python-version: "3.10"
-          - do-full: false
             os: macos-11
-            python-version: "3.10"
-          - do-full: false
-            os: macos-13
             python-version: "3.10"
     runs-on: ${{ matrix.os }}
     steps:
@@ -71,7 +59,7 @@ jobs:
         echo "With PATH = $PATH"
         PY_PATH=$(brew --prefix $PY_PKG)
         PY_PATH_PY="$(brew --prefix $PY_PKG_PY)/libexec/bin"
-        echo "$PY_PATH" >> "$GITHUB_PATH"
+        # echo "$PY_PATH" >> "$GITHUB_PATH"
         echo "$PY_PATH_PY" >> "$GITHUB_PATH"
         export PATH="$PY_PATH:$PY_PATH_PY:$PATH"
         echo "[DEBUG] Updated path"
