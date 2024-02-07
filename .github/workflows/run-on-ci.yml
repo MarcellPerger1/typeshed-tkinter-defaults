@@ -44,15 +44,16 @@ jobs:
       shell: bash
       if: ${{ startswith(matrix.os, 'ubuntu-') }}
       run: sudo apt-get install -y xvfb
-    - name: (MacOS, <3.11) Install pyenv
+    - name: (MacOS, <3.11) Install python ${{ matrix.python-version }} with working tkinter
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
       run: |
+        # Checking outdated versions breaks on macos-13 as linking python@3.12
+        # fails due to a conflict with .../2to3/
         export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
         PY_PKG="python-tk@${{ matrix.python-version }}"
         PY_PKG_PY="python@${{ matrix.python-version }}"
         brew install --overwrite $PY_PKG_PY $PY_PKG
-        brew link --overwrite $PY_PKG_PY $PY_PKG
         echo "[DEBUG] Installed python from brew"
         echo "Running on $(python --version)"
         echo "Located at $(whereis python)"
@@ -71,14 +72,6 @@ jobs:
           echo "[ERROR] Using wrong python version"
           exit 1
         fi
-    - name: (MacOS, <3.11) Install python with working tkinter
-      shell: bash
-      if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
-      run: |
-        whereis python
-        whereis python3
-        echo $PATH
-        python --version
     - name: Run python script (with fallbacks)
       id: run_main
       shell: bash {0}
