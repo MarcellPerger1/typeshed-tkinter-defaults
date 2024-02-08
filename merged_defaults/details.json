@@ -1,31 +1,134 @@
 {
   "Button": {
-    "activebackground": "SystemButtonFace",
-    "activeforeground": "SystemButtonText",
+    "activebackground": [
+      "@different:3",
+      [
+        "#ececec",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "activeforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemPressedButtonTextColor"
+      ]
+    ],
     "anchor": "center",
-    "background": "SystemButtonFace",
-    "bd": "2",
-    "bg": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:3",
+      [
+        "2",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=2"
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bitmap": "",
-    "borderwidth": "2",
+    "borderwidth": [
+      "@different:3",
+      [
+        "2",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=2"
+      ]
+    ],
     "command": "",
     "compound": "none",
     "cursor": "",
     "default": "disabled",
-    "disabledforeground": "SystemDisabledText",
-    "fg": "SystemButtonText",
+    "disabledforeground": [
+      "@different:2",
+      [
+        "#a3a3a3",
+        "SystemDisabledText"
+      ]
+    ],
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "Black",
+        "SystemButtonText"
+      ]
+    ],
     "font": "TkDefaultFont",
-    "foreground": "SystemButtonText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "Black",
+        "SystemButtonText"
+      ]
+    ],
     "height": 0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": "1",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "image": "",
     "justify": "center",
     "overrelief": "",
-    "padx": "1",
-    "pady": "1",
-    "relief": "raised",
+    "padx": [
+      "@different:3",
+      [
+        "1",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=3m"
+      ]
+    ],
+    "pady": [
+      "@different:3",
+      [
+        "1",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=1m"
+      ]
+    ],
+    "relief": [
+      "@different:2",
+      [
+        "flat",
+        "raised"
+      ]
+    ],
     "repeatdelay": 0,
     "repeatinterval": 0,
     "state": "normal",
@@ -34,21 +137,78 @@
     "textvariable": "",
     "underline": -1,
     "width": 0,
-    "wraplength": "0"
+    "wraplength": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ]
   },
   "Canvas": {
-    "background": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bd": "0",
-    "bg": "SystemButtonFace",
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "borderwidth": "0",
     "closeenough": "1.0",
     "confine": "1",
     "cursor": "",
-    "height": "265",
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": "2",
-    "insertbackground": "SystemButtonText",
+    "height": [
+      "@different:4",
+      [
+        "198",
+        "199",
+        "265",
+        "276"
+      ]
+    ],
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@different:3",
+      [
+        "1",
+        "2",
+        "3"
+      ]
+    ],
+    "insertbackground": [
+      "@different:3",
+      [
+        "#000000",
+        "Black",
+        "SystemButtonText"
+      ]
+    ],
     "insertborderwidth": "0",
     "insertofftime": "300",
     "insertontime": "600",
@@ -56,48 +216,180 @@
     "offset": "0,0",
     "relief": "flat",
     "scrollregion": "",
-    "selectbackground": "SystemHighlight",
+    "selectbackground": [
+      "@different:3",
+      [
+        "#c3c3c3",
+        "SystemHighlight",
+        "systemSelectedTextBackgroundColor"
+      ]
+    ],
     "selectborderwidth": "1",
-    "selectforeground": "SystemHighlightText",
+    "selectforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemHighlightText",
+        "systemSelectedTextColor"
+      ]
+    ],
     "state": "normal",
     "takefocus": "",
-    "width": "378",
+    "width": [
+      "@different:4",
+      [
+        "283",
+        "284",
+        "378",
+        "394"
+      ]
+    ],
     "xscrollcommand": "",
     "xscrollincrement": "0",
     "yscrollcommand": "",
     "yscrollincrement": "0"
   },
   "Checkbutton": {
-    "activebackground": "SystemButtonFace",
-    "activeforeground": "SystemWindowText",
+    "activebackground": [
+      "@different:3",
+      [
+        "#ececec",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "activeforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "anchor": "center",
-    "background": "SystemButtonFace",
-    "bd": "2",
-    "bg": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:3",
+      [
+        "2",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=2"
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bitmap": "",
-    "borderwidth": "2",
+    "borderwidth": [
+      "@different:3",
+      [
+        "2",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=2"
+      ]
+    ],
     "command": "",
     "compound": "none",
     "cursor": "",
-    "disabledforeground": "SystemDisabledText",
-    "fg": "SystemWindowText",
+    "disabledforeground": [
+      "@different:2",
+      [
+        "#a3a3a3",
+        "SystemDisabledText"
+      ]
+    ],
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkDefaultFont",
-    "foreground": "SystemWindowText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "height": 0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": "1",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "image": "",
     "indicatoron": 1,
     "justify": "center",
-    "offrelief": "raised",
+    "offrelief": [
+      "@different:2",
+      [
+        "flat",
+        "raised"
+      ]
+    ],
     "offvalue": "0",
     "onvalue": "1",
     "overrelief": "",
-    "padx": "1",
-    "pady": "1",
+    "padx": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "pady": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "relief": "flat",
-    "selectcolor": "SystemWindow",
+    "selectcolor": [
+      "@different:3",
+      [
+        "#b03060",
+        "#ffffff",
+        "SystemWindow"
+      ]
+    ],
     "selectimage": "",
     "state": "normal",
     "takefocus": "",
@@ -106,38 +398,167 @@
     "tristateimage": "",
     "tristatevalue": "",
     "underline": -1,
-    "variable": "!checkbutton1",
+    "variable": [
+      "@different:4",
+      [
+        "!checkbutton",
+        "!checkbutton1",
+        "@Tcl_Obj: type=parsedVarName, value=!checkbutton",
+        "@Tcl_Obj: type=parsedVarName, value=!checkbutton1"
+      ]
+    ],
     "width": 0,
-    "wraplength": "0"
+    "wraplength": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ]
   },
   "Entry": {
-    "background": "SystemWindow",
-    "bd": 1,
-    "bg": "SystemWindow",
-    "borderwidth": 1,
+    "background": [
+      "@different:3",
+      [
+        "#ffffff",
+        "SystemWindow",
+        "systemTextBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:2",
+      [
+        1,
+        2
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#ffffff",
+        "SystemWindow",
+        "systemTextBackgroundColor"
+      ]
+    ],
+    "borderwidth": [
+      "@different:2",
+      [
+        1,
+        2
+      ]
+    ],
     "cursor": "xterm",
-    "disabledbackground": "SystemButtonFace",
-    "disabledforeground": "SystemDisabledText",
+    "disabledbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "disabledforeground": [
+      "@different:2",
+      [
+        "#a3a3a3",
+        "SystemDisabledText"
+      ]
+    ],
     "exportselection": 1,
-    "fg": "SystemWindowText",
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkTextFont",
-    "foreground": "SystemWindowText",
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": 0,
-    "insertbackground": "SystemWindowText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@different:3",
+      [
+        0,
+        1,
+        3
+      ]
+    ],
+    "insertbackground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "insertborderwidth": 0,
     "insertofftime": 300,
     "insertontime": 600,
-    "insertwidth": 2,
+    "insertwidth": [
+      "@different:2",
+      [
+        1,
+        2
+      ]
+    ],
     "invalidcommand": "",
     "invcmd": "",
     "justify": "left",
-    "readonlybackground": "SystemButtonFace",
+    "readonlybackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "relief": "sunken",
-    "selectbackground": "SystemHighlight",
-    "selectborderwidth": 0,
-    "selectforeground": "SystemHighlightText",
+    "selectbackground": [
+      "@different:3",
+      [
+        "#c3c3c3",
+        "SystemHighlight",
+        "systemSelectedTextBackgroundColor"
+      ]
+    ],
+    "selectborderwidth": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
+    "selectforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemHighlightText",
+        "systemSelectedTextColor"
+      ]
+    ],
     "show": "",
     "state": "normal",
     "takefocus": "",
@@ -149,48 +570,187 @@
     "xscrollcommand": ""
   },
   "Frame": {
-    "background": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bd": 0,
-    "bg": "SystemButtonFace",
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "borderwidth": 0,
     "class": "Frame",
     "colormap": "",
     "container": 0,
     "cursor": "",
     "height": 0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
     "highlightthickness": 0,
-    "padx": "0",
-    "pady": "0",
+    "padx": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "pady": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "relief": "flat",
     "takefocus": "0",
     "visual": "",
     "width": 0
   },
   "Label": {
-    "activebackground": "SystemButtonFace",
-    "activeforeground": "SystemButtonText",
+    "activebackground": [
+      "@different:3",
+      [
+        "#ececec",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "activeforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemPressedButtonTextColor"
+      ]
+    ],
     "anchor": "center",
-    "background": "SystemButtonFace",
-    "bd": "2",
-    "bg": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:3",
+      [
+        "2",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=2"
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bitmap": "",
-    "borderwidth": "2",
+    "borderwidth": [
+      "@different:3",
+      [
+        "2",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=2"
+      ]
+    ],
     "compound": "none",
     "cursor": "",
-    "disabledforeground": "SystemDisabledText",
-    "fg": "SystemButtonText",
+    "disabledforeground": [
+      "@different:2",
+      [
+        "#a3a3a3",
+        "SystemDisabledText"
+      ]
+    ],
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkDefaultFont",
-    "foreground": "SystemButtonText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "height": 0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": "0",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "image": "",
     "justify": "center",
-    "padx": "1",
-    "pady": "1",
+    "padx": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "pady": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "relief": "flat",
     "state": "normal",
     "takefocus": "0",
@@ -198,28 +758,91 @@
     "textvariable": "",
     "underline": -1,
     "width": 0,
-    "wraplength": "0"
+    "wraplength": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ]
   },
   "LabelFrame": {
-    "background": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bd": 2,
-    "bg": "SystemButtonFace",
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "borderwidth": 2,
     "class": "Labelframe",
     "colormap": "",
     "container": 0,
     "cursor": "",
-    "fg": "SystemButtonText",
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkDefaultFont",
-    "foreground": "SystemButtonText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "height": 0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
     "highlightthickness": 0,
     "labelanchor": "nw",
     "labelwidget": "",
-    "padx": "0",
-    "pady": "0",
+    "padx": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "pady": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "relief": "groove",
     "takefocus": "0",
     "text": "",
@@ -227,27 +850,113 @@
     "width": 0
   },
   "Listbox": {
-    "activestyle": "underline",
-    "background": "SystemWindow",
+    "activestyle": [
+      "@different:2",
+      [
+        "dotbox",
+        "underline"
+      ]
+    ],
+    "background": [
+      "@different:3",
+      [
+        "#ffffff",
+        "SystemWindow",
+        "systemTextBackgroundColor"
+      ]
+    ],
     "bd": 1,
-    "bg": "SystemWindow",
+    "bg": [
+      "@different:3",
+      [
+        "#ffffff",
+        "SystemWindow",
+        "systemTextBackgroundColor"
+      ]
+    ],
     "borderwidth": 1,
     "cursor": "",
-    "disabledforeground": "SystemDisabledText",
+    "disabledforeground": [
+      "@different:2",
+      [
+        "#a3a3a3",
+        "SystemDisabledText"
+      ]
+    ],
     "exportselection": 1,
-    "fg": "SystemButtonText",
-    "font": "TkDefaultFont",
-    "foreground": "SystemButtonText",
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
+    "font": [
+      "@different:2",
+      [
+        "TkDefaultFont",
+        "TkTextFont"
+      ]
+    ],
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "height": 10,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": 1,
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
     "justify": "left",
     "listvariable": "",
-    "relief": "sunken",
-    "selectbackground": "SystemHighlight",
+    "relief": [
+      "@different:2",
+      [
+        "solid",
+        "sunken"
+      ]
+    ],
+    "selectbackground": [
+      "@different:3",
+      [
+        "#c3c3c3",
+        "SystemHighlight",
+        "systemSelectedTextBackgroundColor"
+      ]
+    ],
     "selectborderwidth": 0,
-    "selectforeground": "SystemHighlightText",
+    "selectforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemHighlightText",
+        "systemSelectedTextColor"
+      ]
+    ],
     "selectmode": "browse",
     "setgrid": 0,
     "state": "normal",
@@ -257,53 +966,269 @@
     "yscrollcommand": ""
   },
   "Menu": {
-    "activebackground": "SystemHighlight",
-    "activeborderwidth": 1,
-    "activeforeground": "SystemHighlightText",
-    "background": "SystemMenu",
-    "bd": 1,
-    "bg": "SystemMenu",
-    "borderwidth": 1,
-    "cursor": "arrow",
-    "disabledforeground": "SystemDisabledText",
-    "fg": "SystemMenuText",
-    "font": "{Segoe UI} 9",
-    "foreground": "SystemMenuText",
+    "activebackground": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=border, value=#abcdef",
+        "@Tcl_Obj: type=border, value=#ececec",
+        "SystemHighlight"
+      ]
+    ],
+    "activeborderwidth": [
+      "@different:3",
+      [
+        1,
+        "@Tcl_Obj: type=pixel, value=0",
+        "@Tcl_Obj: type=pixel, value=1"
+      ]
+    ],
+    "activeforeground": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=color, value=#000000",
+        "@Tcl_Obj: type=color, value=#abcdef",
+        "SystemHighlightText"
+      ]
+    ],
+    "background": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=border, value=#000001",
+        "@Tcl_Obj: type=border, value=#d9d9d9",
+        "SystemMenu"
+      ]
+    ],
+    "bd": [
+      "@different:3",
+      [
+        1,
+        "@Tcl_Obj: type=pixel, value=0",
+        "@Tcl_Obj: type=pixel, value=1"
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=border, value=#000001",
+        "@Tcl_Obj: type=border, value=#d9d9d9",
+        "SystemMenu"
+      ]
+    ],
+    "borderwidth": [
+      "@different:3",
+      [
+        1,
+        "@Tcl_Obj: type=pixel, value=0",
+        "@Tcl_Obj: type=pixel, value=1"
+      ]
+    ],
+    "cursor": [
+      "@typeDiff:2",
+      "arrow",
+      [
+        "@Py_str",
+        "cursor"
+      ]
+    ],
+    "disabledforeground": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=color, value=#a3a3a3",
+        "@Tcl_Obj: type=color, value=#abcdef",
+        "SystemDisabledText"
+      ]
+    ],
+    "fg": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=color, value=#000000",
+        "@Tcl_Obj: type=color, value=#010000",
+        "SystemMenuText"
+      ]
+    ],
+    "font": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=font, value=TkMenuFont",
+        "@Tcl_Obj: type=font, value=menu",
+        "{Segoe UI} 9"
+      ]
+    ],
+    "foreground": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=color, value=#000000",
+        "@Tcl_Obj: type=color, value=#010000",
+        "SystemMenuText"
+      ]
+    ],
     "postcommand": "",
-    "relief": "flat",
-    "selectcolor": "SystemMenuText",
+    "relief": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=index, value=flat",
+        "@Tcl_Obj: type=index, value=raised",
+        "flat"
+      ]
+    ],
+    "selectcolor": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=color, value=#000000",
+        "@Tcl_Obj: type=color, value=#abcdef",
+        "SystemMenuText"
+      ]
+    ],
     "takefocus": "0",
-    "tearoff": 1,
+    "tearoff": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
     "tearoffcommand": "",
     "title": "",
-    "type": "normal"
+    "type": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ]
   },
   "Menubutton": {
-    "activebackground": "SystemButtonFace",
-    "activeforeground": "SystemButtonText",
-    "anchor": "center",
-    "background": "SystemButtonFace",
-    "bd": 1,
-    "bg": "SystemButtonFace",
+    "activebackground": [
+      "@different:3",
+      [
+        "#ececec",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "activeforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
+    "anchor": [
+      "@different:2",
+      [
+        "center",
+        "w"
+      ]
+    ],
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bitmap": "",
-    "borderwidth": 1,
+    "borderwidth": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
     "compound": "none",
     "cursor": "",
     "direction": "below",
-    "disabledforeground": "SystemDisabledText",
-    "fg": "SystemButtonText",
+    "disabledforeground": [
+      "@different:2",
+      [
+        "#a3a3a3",
+        "SystemDisabledText"
+      ]
+    ],
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkDefaultFont",
-    "foreground": "SystemButtonText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "height": "0",
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
     "highlightthickness": 0,
     "image": "",
-    "indicatoron": 0,
-    "justify": "center",
+    "indicatoron": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
+    "justify": [
+      "@different:2",
+      [
+        "center",
+        "left"
+      ]
+    ],
     "menu": "",
-    "padx": 5,
-    "pady": 4,
+    "padx": [
+      "@different:3",
+      [
+        0,
+        5,
+        6
+      ]
+    ],
+    "pady": [
+      "@different:2",
+      [
+        0,
+        4
+      ]
+    ],
     "relief": "flat",
     "state": "normal",
     "takefocus": "0",
@@ -316,20 +1241,76 @@
   "Message": {
     "anchor": "center",
     "aspect": 150,
-    "background": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bd": 1,
-    "bg": "SystemButtonFace",
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "borderwidth": 1,
     "cursor": "",
-    "fg": "SystemButtonText",
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkDefaultFont",
-    "foreground": "SystemButtonText",
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
     "highlightthickness": 0,
     "justify": "left",
-    "padx": "-1",
-    "pady": "-1",
+    "padx": [
+      "@typeDiff:2",
+      "-1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "pady": [
+      "@typeDiff:2",
+      "-1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "relief": "flat",
     "takefocus": "0",
     "text": "",
@@ -337,56 +1318,201 @@
     "width": 0
   },
   "PanedWindow": {
-    "background": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bd": 1,
-    "bg": "SystemButtonFace",
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "borderwidth": 1,
     "cursor": "",
     "handlepad": 8,
-    "handlesize": "8",
+    "handlesize": [
+      "@typeDiff:2",
+      "8",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "height": "",
     "opaqueresize": 1,
     "orient": "horizontal",
     "proxybackground": "",
-    "proxyborderwidth": "2",
+    "proxyborderwidth": [
+      "@typeDiff:2",
+      "2",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "proxyrelief": "flat",
     "relief": "flat",
     "sashcursor": "",
     "sashpad": 0,
     "sashrelief": "flat",
-    "sashwidth": "3",
+    "sashwidth": [
+      "@typeDiff:2",
+      "3",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "showhandle": 0,
     "width": ""
   },
   "Radiobutton": {
-    "activebackground": "SystemButtonFace",
-    "activeforeground": "SystemWindowText",
+    "activebackground": [
+      "@different:3",
+      [
+        "#ececec",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "activeforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "anchor": "center",
-    "background": "SystemButtonFace",
-    "bd": "2",
-    "bg": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:3",
+      [
+        "2",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=2"
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bitmap": "",
-    "borderwidth": "2",
+    "borderwidth": [
+      "@different:3",
+      [
+        "2",
+        "@Tcl_Obj: type=pixel, value=1",
+        "@Tcl_Obj: type=pixel, value=2"
+      ]
+    ],
     "command": "",
     "compound": "none",
     "cursor": "",
-    "disabledforeground": "SystemDisabledText",
-    "fg": "SystemWindowText",
+    "disabledforeground": [
+      "@different:2",
+      [
+        "#a3a3a3",
+        "SystemDisabledText"
+      ]
+    ],
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkDefaultFont",
-    "foreground": "SystemWindowText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "height": 0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": "1",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "image": "",
     "indicatoron": 1,
     "justify": "center",
-    "offrelief": "raised",
+    "offrelief": [
+      "@different:2",
+      [
+        "flat",
+        "raised"
+      ]
+    ],
     "overrelief": "",
-    "padx": "1",
-    "pady": "1",
+    "padx": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "pady": [
+      "@typeDiff:2",
+      "1",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "relief": "flat",
-    "selectcolor": "SystemWindow",
+    "selectcolor": [
+      "@different:3",
+      [
+        "#b03060",
+        "#ffffff",
+        "SystemWindow"
+      ]
+    ],
     "selectimage": "",
     "state": "normal",
     "takefocus": "",
@@ -396,27 +1522,97 @@
     "tristatevalue": "",
     "underline": -1,
     "value": "",
-    "variable": "selectedButton",
+    "variable": [
+      "@typeDiff:2",
+      "selectedButton",
+      [
+        "@Py_str",
+        "parsedVarName"
+      ]
+    ],
     "width": 0,
-    "wraplength": "0"
+    "wraplength": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ]
   },
   "Scale": {
-    "activebackground": "SystemButtonFace",
-    "background": "SystemButtonFace",
+    "activebackground": [
+      "@different:3",
+      [
+        "#ececec",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bd": 1,
-    "bg": "SystemButtonFace",
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bigincrement": 0.0,
     "borderwidth": 1,
     "command": "",
     "cursor": "",
     "digits": 0,
-    "fg": "SystemButtonText",
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkDefaultFont",
-    "foreground": "SystemButtonText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemButtonText",
+        "systemTextColor"
+      ]
+    ],
     "from": 0.0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": 2,
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@different:3",
+      [
+        0,
+        1,
+        2
+      ]
+    ],
     "label": "",
     "length": 100,
     "orient": "vertical",
@@ -431,71 +1627,285 @@
     "takefocus": "",
     "tickinterval": 0.0,
     "to": 100.0,
-    "troughcolor": "SystemScrollbar",
+    "troughcolor": [
+      "@different:3",
+      [
+        "#b3b3b3",
+        "#c3c3c3",
+        "SystemScrollbar"
+      ]
+    ],
     "variable": "",
     "width": 15
   },
   "Scrollbar": {
-    "activebackground": "SystemButtonFace",
+    "activebackground": [
+      "@different:3",
+      [
+        "#ececec",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "activerelief": "raised",
-    "background": "SystemButtonFace",
-    "bd": "0",
-    "bg": "SystemButtonFace",
-    "borderwidth": "0",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:2",
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "borderwidth": [
+      "@different:2",
+      [
+        "0",
+        "1"
+      ]
+    ],
     "command": "",
     "cursor": "",
     "elementborderwidth": "-1",
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
     "highlightthickness": "0",
     "jump": "0",
     "orient": "vertical",
-    "relief": "sunken",
+    "relief": [
+      "@different:2",
+      [
+        "flat",
+        "sunken"
+      ]
+    ],
     "repeatdelay": "300",
     "repeatinterval": "100",
     "takefocus": "",
-    "troughcolor": "SystemScrollbar",
-    "width": "17"
+    "troughcolor": [
+      "@different:3",
+      [
+        "#b3b3b3",
+        "#c3c3c3",
+        "SystemScrollbar"
+      ]
+    ],
+    "width": [
+      "@different:3",
+      [
+        "11",
+        "15",
+        "17"
+      ]
+    ]
   },
   "Spinbox": {
-    "activebackground": "SystemButtonFace",
-    "background": "SystemWindow",
-    "bd": 1,
-    "bg": "SystemWindow",
-    "borderwidth": 1,
-    "buttonbackground": "SystemButtonFace",
+    "activebackground": [
+      "@different:3",
+      [
+        "#ececec",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "background": [
+      "@different:3",
+      [
+        "#ffffff",
+        "SystemWindow",
+        "systemTextBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:2",
+      [
+        1,
+        2
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#ffffff",
+        "SystemWindow",
+        "systemTextBackgroundColor"
+      ]
+    ],
+    "borderwidth": [
+      "@different:2",
+      [
+        1,
+        2
+      ]
+    ],
+    "buttonbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "buttoncursor": "",
-    "buttondownrelief": "raised",
-    "buttonuprelief": "raised",
+    "buttondownrelief": [
+      "@different:2",
+      [
+        "flat",
+        "raised"
+      ]
+    ],
+    "buttonuprelief": [
+      "@different:2",
+      [
+        "flat",
+        "raised"
+      ]
+    ],
     "command": "",
     "cursor": "xterm",
-    "disabledbackground": "SystemButtonFace",
-    "disabledforeground": "SystemDisabledText",
+    "disabledbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "disabledforeground": [
+      "@different:2",
+      [
+        "#a3a3a3",
+        "SystemDisabledText"
+      ]
+    ],
     "exportselection": 1,
-    "fg": "SystemWindowText",
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkTextFont",
-    "foreground": "SystemWindowText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "format": "",
     "from": 0.0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": 0,
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@different:3",
+      [
+        0,
+        1,
+        3
+      ]
+    ],
     "increment": 1.0,
-    "insertbackground": "SystemWindowText",
+    "insertbackground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "insertborderwidth": 0,
     "insertofftime": 300,
     "insertontime": 600,
-    "insertwidth": 2,
+    "insertwidth": [
+      "@different:2",
+      [
+        1,
+        2
+      ]
+    ],
     "invalidcommand": "",
     "invcmd": "",
     "justify": "left",
-    "readonlybackground": "SystemButtonFace",
+    "readonlybackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "relief": "sunken",
     "repeatdelay": 400,
     "repeatinterval": 100,
-    "selectbackground": "SystemHighlight",
-    "selectborderwidth": 0,
-    "selectforeground": "SystemHighlightText",
+    "selectbackground": [
+      "@different:3",
+      [
+        "#c3c3c3",
+        "SystemHighlight",
+        "systemSelectedTextBackgroundColor"
+      ]
+    ],
+    "selectborderwidth": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
+    "selectforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemHighlightText",
+        "systemSelectedTextColor"
+      ]
+    ],
     "state": "normal",
     "takefocus": "",
     "textvariable": "",
@@ -510,35 +1920,143 @@
   },
   "Text": {
     "autoseparators": 1,
-    "background": "SystemWindow",
-    "bd": 1,
-    "bg": "SystemWindow",
+    "background": [
+      "@different:3",
+      [
+        "#ffffff",
+        "SystemWindow",
+        "systemTextBackgroundColor"
+      ]
+    ],
+    "bd": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
+    "bg": [
+      "@different:3",
+      [
+        "#ffffff",
+        "SystemWindow",
+        "systemTextBackgroundColor"
+      ]
+    ],
     "blockcursor": 0,
-    "borderwidth": 1,
+    "borderwidth": [
+      "@different:2",
+      [
+        0,
+        1
+      ]
+    ],
     "cursor": "xterm",
     "endline": "",
     "exportselection": 1,
-    "fg": "SystemWindowText",
+    "fg": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "font": "TkFixedFont",
-    "foreground": "SystemWindowText",
+    "foreground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "height": 24,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
-    "highlightthickness": 0,
-    "inactiveselectbackground": "",
-    "insertbackground": "SystemWindowText",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
+    "highlightthickness": [
+      "@different:3",
+      [
+        0,
+        1,
+        3
+      ]
+    ],
+    "inactiveselectbackground": [
+      "@different:3",
+      [
+        "",
+        "#c3c3c3",
+        "systemUnemphasizedSelectedTextBackgroundColor"
+      ]
+    ],
+    "insertbackground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowText",
+        "systemTextColor"
+      ]
+    ],
     "insertborderwidth": 0,
     "insertofftime": 300,
     "insertontime": 600,
     "insertunfocussed": "none",
-    "insertwidth": 2,
+    "insertwidth": [
+      "@different:2",
+      [
+        1,
+        2
+      ]
+    ],
     "maxundo": 0,
     "padx": 1,
     "pady": 1,
-    "relief": "sunken",
-    "selectbackground": "SystemHighlight",
-    "selectborderwidth": "0",
-    "selectforeground": "SystemHighlightText",
+    "relief": [
+      "@different:2",
+      [
+        "flat",
+        "sunken"
+      ]
+    ],
+    "selectbackground": [
+      "@different:3",
+      [
+        "#c3c3c3",
+        "SystemHighlight",
+        "systemSelectedTextBackgroundColor"
+      ]
+    ],
+    "selectborderwidth": [
+      "@different:3",
+      [
+        "0",
+        "@Tcl_Obj: type=pixel, value=0",
+        "@Tcl_Obj: type=pixel, value=1"
+      ]
+    ],
+    "selectforeground": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemHighlightText",
+        "systemSelectedTextColor"
+      ]
+    ],
     "setgrid": 0,
     "spacing1": 0,
     "spacing2": 0,
@@ -555,21 +2073,63 @@
     "yscrollcommand": ""
   },
   "Tk": {
-    "background": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bd": 0,
-    "bg": "SystemButtonFace",
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "borderwidth": 0,
     "class": "Tk",
     "colormap": "",
     "container": 0,
     "cursor": "",
     "height": 0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
     "highlightthickness": 0,
     "menu": "",
-    "padx": "0",
-    "pady": "0",
+    "padx": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "pady": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "relief": "flat",
     "screen": "",
     "takefocus": "0",
@@ -578,21 +2138,63 @@
     "width": 0
   },
   "Toplevel": {
-    "background": "SystemButtonFace",
+    "background": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "bd": 0,
-    "bg": "SystemButtonFace",
+    "bg": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
     "borderwidth": 0,
     "class": "Toplevel",
     "colormap": "",
     "container": 0,
     "cursor": "",
     "height": 0,
-    "highlightbackground": "SystemButtonFace",
-    "highlightcolor": "SystemWindowFrame",
+    "highlightbackground": [
+      "@different:3",
+      [
+        "#d9d9d9",
+        "SystemButtonFace",
+        "systemWindowBackgroundColor"
+      ]
+    ],
+    "highlightcolor": [
+      "@different:3",
+      [
+        "#000000",
+        "SystemWindowFrame",
+        "systemTextColor"
+      ]
+    ],
     "highlightthickness": 0,
     "menu": "",
-    "padx": "0",
-    "pady": "0",
+    "padx": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "pady": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "relief": "flat",
     "screen": "",
     "takefocus": "0",
