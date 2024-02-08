@@ -55,12 +55,7 @@ jobs:
         PY_PKG_PY="python@${{ matrix.python-version }}"
         brew install --overwrite $PY_PKG_PY $PY_PKG
         echo "[DEBUG] Installed python from brew"
-        echo "Running on $(python --version)"
-        echo "Located at $(whereis python)"
-        echo "With PATH = $PATH"
-        PY_PATH=$(brew --prefix $PY_PKG)
         PY_PATH_PY="$(brew --prefix $PY_PKG_PY)/libexec/bin"
-        # echo "$PY_PATH" >> "$GITHUB_PATH"
         echo "$PY_PATH_PY" >> "$GITHUB_PATH"
         export PATH="$PY_PATH_PY:$PATH"
         echo "[DEBUG] Updated path"
