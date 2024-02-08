@@ -53,7 +53,7 @@ jobs:
         export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
         PY_PKG="python-tk@${{ matrix.python-version }}"
         PY_PKG_PY="python@${{ matrix.python-version }}"
-        brew install --overwrite $PY_PKG_PY $PY_PKG
+        brew install --overwrite $PY_PKG
         echo "[DEBUG] Installed python from brew"
         PY_PATH_PY="$(brew --prefix $PY_PKG_PY)/libexec/bin"
         echo "$PY_PATH_PY" >> "$GITHUB_PATH"
