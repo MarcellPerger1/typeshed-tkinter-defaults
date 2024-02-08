@@ -48,22 +48,21 @@ jobs:
       shell: bash
       if: ${{ startswith(matrix.os, 'macos-') && contains('3.8;3.9;3.10', matrix.python-version) }}
       run: |
+        PYVER="${{ matrix.python-version }}"
         # Checking outdated versions breaks on macos-13 as linking python@3.12
         # fails due to a conflict with .../2to3/
-        export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
-        PY_PKG="python-tk@${{ matrix.python-version }}"
-        PY_PKG_PY="python@${{ matrix.python-version }}"
-        brew install --overwrite $PY_PKG
+        echo "[DEBUG] Installing python-tk@$PYVER from brew"
+        HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1 brew install --overwrite python-tk@$PYVER
         echo "[DEBUG] Installed python from brew"
-        PY_PATH_PY="$(brew --prefix $PY_PKG_PY)/libexec/bin"
-        echo "$PY_PATH_PY" >> "$GITHUB_PATH"
-        export PATH="$PY_PATH_PY:$PATH"
+        PY_PATH="$(brew --prefix python@$PYVER)/libexec/bin"
+        echo "$PY_PATH" >> "$GITHUB_PATH"
+        export PATH="$PY_PATH:$PATH"
         echo "[DEBUG] Updated path"
         echo "Running on $(python --version)"
         echo "Located at $(whereis python)"
         echo "With PATH = $PATH"
         PYVER_S=$(python --version)
-        if [[ ! $PYVER_S =~ "Python ${{ matrix.python-version }}." ]] ; then
+        if [[ ! $PYVER_S =~ "Python $PYVER." ]] ; then
           echo "[ERROR] Using wrong python version"
           exit 1
         fi
