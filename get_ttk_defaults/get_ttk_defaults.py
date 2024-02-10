@@ -120,6 +120,11 @@ def make_value_serializable(v: object):
     return f'@repr:{repr(v)}'
 
 
+class _TclSafeEncoder(json.JSONEncoder):
+    def default(self, o: object):
+        return make_value_serializable(o)
+
+
 def transform_to_serializable(defaults_o: dict[str, dict]):
     def tform_one(o: dict[str, object]) -> dict[str, object]:
         return {key: make_value_serializable(value) for key, value in o.items()}
@@ -131,14 +136,14 @@ def defaults_str(defaults: dict[str, dict] = None):
     if defaults is None:
         defaults = get_defaults()
     defaults_safe = transform_to_serializable(defaults)
-    return json.dumps(defaults_safe, indent=4, sort_keys=True)
+    return json.dumps(defaults_safe, indent=4, sort_keys=True, cls=_TclSafeEncoder)
 
 
 def write_defaults(file: TextIO, defaults: dict[str, dict] = None):
     if defaults is None:
         defaults = get_defaults()
     defaults_safe = transform_to_serializable(defaults)
-    json.dump(defaults_safe, file, indent=4, sort_keys=True)
+    json.dump(defaults_safe, file, indent=4, sort_keys=True, cls=_TclSafeEncoder)
     return defaults
 
 
