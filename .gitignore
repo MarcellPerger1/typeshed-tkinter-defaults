@@ -1,8 +1,10 @@
 # Extra
 # Results for the current platform
 tkinter_defaults_curr.json
+ttk_defaults_curr.json
 # Filename of the written default (for merging them in GH actions)
 curr_out_filename.txt
+ttk_curr_out_filename.txt
 # Github action downloads artifacts to here
 downloaded_artifacts/
 
