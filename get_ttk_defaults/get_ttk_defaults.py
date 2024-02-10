@@ -57,56 +57,92 @@ def get_defaults():
         if not inspect.isclass(value):
             debug(f'SKIP key {name!r} (type={short_repr(value)}): not a class', level=2)
             continue
-        try:
-            inst = value(temp_root)
-        except (
-                NotImplementedError, ValueError, TypeError, AttributeError,
-                TclError, RuntimeError) as e:
-            if isinstance(e, (TclError, RuntimeError)):
-                print(f'TclError in 1-arg __init__: _tkinter.TclError: {e!s}',
-                      file=sys.stderr)
-            debug(f'INFO key {name!r}: no 1-arg __init__')
-            try:
-                inst = value()
-            except (NotImplementedError, ValueError, TypeError, AttributeError, RuntimeError):
-                if isinstance(e, (TclError, RuntimeError)):
-                    print(f'TclError in 0-arg __init__: _tkinter.TclError: {e!s}',
-                          file=sys.stderr)
-                debug(f'SKIP key {name!r}: '
-                      f'no 0-arg or 1-arg __init__')
-                continue
-        try:
-            # Stringify all the values so that tkinter knows that it needs to
-            # calculate the string value but tkinter doesn't actually return
-            # the string value the first time for some reason so we need
-            # to call it again after it has calculated the string value
-            _ = str(dict(inst))
-            defaults = dict(inst)
-        except (NotImplementedError, TypeError, ValueError, AttributeError):
-            debug(f'INFO key {name!r} '
-                  f'(inst={short_repr(inst)}): cannot convert to dict')
-            # try another way
-            try:
-                _ = str(inst.configure())
-                options_list = inst.configure()
-            except (NotImplementedError, TypeError, ValueError, AttributeError):
-                debug(f'SKIP key {name!r} (inst={short_repr(inst)}): '
-                      f'cannot configure 0-arg')
-                continue
-            try:
-                defaults = {((tup[0], tup[1]) if tup[0] != tup[1] else tup[0]):
-                            tup[4] for tup in options_list}
-            except (NotImplementedError, TypeError, ValueError, AttributeError):
-                debug(f'SKIP key {name!r} ('
-                      f'inst={short_repr(inst)}): bad configure() output')
-                continue
-        assert defaults is not None
+        inst = None
+        inst = _try_construct_option_menu(name, value, temp_root) if inst is None else inst
+        inst = _construct_inst(name, value, temp_root) if inst is None else inst
+        if inst is None:
+            continue
+        if (defaults := _get_inst_defaults(inst, name, value, temp_root)) is None:
+            continue
         debug(f'Success key {name!r} (type={short_repr(value)}, '
               f'inst={short_repr(inst)}): defaults={short_repr(defaults, 40)}')
         out['ttk.' + name] = defaults
     if temp_root is not None:
         temp_root.destroy()
     return out
+
+
+def _get_inst_defaults(inst, name: str, _cls, _temp_root: tkinter.Tk | None) -> dict[str, ...] | None:
+    try:
+        # Stringify all the values so that tkinter knows that it needs to
+        # calculate the string value but tkinter doesn't actually return
+        # the string value the first time for some reason so we need
+        # to call it again after it has calculated the string value
+        _ = str(dict(inst))
+        return dict(inst)
+    except (NotImplementedError, TypeError, ValueError, AttributeError):
+        debug(f'INFO key {name!r} (inst={short_repr(inst)}): cannot convert to dict')
+    # try another way
+    try:
+        _ = str(inst.configure())
+        options_list = inst.configure()
+    except (NotImplementedError, TypeError, ValueError, AttributeError):
+        debug(f'SKIP key {name!r} (inst={short_repr(inst)}): '
+              f'cannot configure 0-arg')
+        return None
+    try:
+        return {((tup[0], tup[1]) if tup[0] != tup[1] else tup[0]):
+                tup[4] for tup in options_list}
+    except (NotImplementedError, TypeError, ValueError, AttributeError):
+        debug(f'SKIP key {name!r} ('
+              f'inst={short_repr(inst)}): bad configure() output')
+        return None
+
+
+def _construct_inst(name: str, value, temp_root: tkinter.Tk | None):
+    try:
+        inst = value(temp_root)
+    except (
+            NotImplementedError, ValueError, TypeError, AttributeError,
+            TclError, RuntimeError) as e:
+        if isinstance(e, (TclError, RuntimeError)):
+            print(f'TclError in 1-arg __init__: _tkinter.TclError: {e!s}',
+                  file=sys.stderr)
+        debug(f'INFO key {name!r}: no 1-arg __init__')
+        try:
+            inst = value()
+        except (NotImplementedError, ValueError, TypeError, AttributeError, RuntimeError):
+            if isinstance(e, (TclError, RuntimeError)):
+                print(f'TclError in 0-arg __init__: _tkinter.TclError: {e!s}',
+                      file=sys.stderr)
+            debug(f'SKIP key {name!r}: no 0-arg or 1-arg __init__')
+            return None
+    return inst
+
+
+def _try_construct_option_menu(name: str, value: type[ttk.OptionMenu],
+                               temp_root: tkinter.Tk | None):
+    if name != 'OptionMenu':
+        return None
+    temp_var = tkinter.Variable(temp_root)
+    try:
+        om = value(temp_root, temp_var)
+    except (NotImplementedError, ValueError, TypeError, AttributeError,
+            TclError, RuntimeError) as e:
+        if isinstance(e, (TclError, RuntimeError)):
+            print(f'Error in 2-arg OptionMenu.__init__: '
+                  f'{type(e).__name__}: {e!s}', file=sys.stderr)
+        debug(f"INFO key 'OptionMenu' (special): no 2-arg __init__(master=root)")
+        try:
+            om = value(None, temp_var)
+        except (NotImplementedError, ValueError, TypeError, AttributeError,
+                TclError, RuntimeError) as e:
+            if isinstance(e, (TclError, RuntimeError)):
+                print(f'Error in 2-arg __init__ (with master=None): '
+                      f'{type(e).__name__}: {e!s}', file=sys.stderr)
+            debug(f"WARN key 'OptionMenu' (special): no 2-arg __init__ at all")
+            return None
+    return om
 
 
 ALLOWED_JSON_TYPES = (int, float, str, dict, list, tuple, bool, type(None))

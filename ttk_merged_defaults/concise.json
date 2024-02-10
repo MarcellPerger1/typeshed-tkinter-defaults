@@ -173,6 +173,22 @@
     "takefocus": "ttk::takefocus",
     "width": 0
   },
+  "ttk.OptionMenu": {
+    "class": "",
+    "compound": "",
+    "cursor": "",
+    "direction": "below",
+    "image": "",
+    "menu": "@repr:<tkinter.Menu object .!optionmenu.!menu>",
+    "padding": "",
+    "state": "normal",
+    "style": "",
+    "takefocus": "ttk::takefocus",
+    "text": "",
+    "textvariable": "PY_VAR6",
+    "underline": -1,
+    "width": ""
+  },
   "ttk.PanedWindow": {
     "class": "",
     "cursor": "",
