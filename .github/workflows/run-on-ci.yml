@@ -111,18 +111,67 @@ jobs:
         else
           exit 1
         fi
+    - name: Find ttk defaults (with fallback)
+      shell: bash {0}
+      id: run_main_ttk
+      run: |
+        echo "Running on $(python --version)"
+        echo "Located at $(whereis python)"
+        echo "With PATH = $PATH"
+        EXIT_XVFB=9
+        EXIT_FALLBACK=9
+        echo "Running normally"
+        python -m get_ttk_defaults.write_curr_ttk_defaults
+        EXIT_NORMAL=$?
+        if [ "$EXIT_NORMAL" -ne "0" ] ; then
+          echo "Trying to start Xvfb"
+          type Xvfb
+          Xvfb :0 -screen 0 1024x768x16 &
+          EXITSTATUS_XVFB=$?
+          if [ "$EXITSTATUS_XVFB" -ne "0" ] ; then
+            echo "Couldn't run Xvfb"
+            EXIT_XVFB="$EXITSTATUS_XVFB"
+          else
+            sleep 2
+            ps aux | grep Xvfb
+            echo "Running under Xvfb"
+            DISPLAY=:0.0 python -m get_ttk_defaults.write_curr_ttk_defaults
+            EXIT_XVFB=$?
+          fi
+          if [ "$EXIT_XVFB" -ne "0" ] ; then
+            echo "Running fallback"
+            TK_DEFAULTS_FALLBACK=1 python -m get_ttk_defaults.write_curr_ttk_defaults
+            EXIT_FALLBACK=$?
+          fi
+        fi
+        if [ "$EXIT_NORMAL" -eq "0" ] || [ "$EXIT_XVFB" -eq "0" ] || [ "$EXIT_FALLBACK" -eq "0" ] ; then
+          FILENAME=$(cat ./ttk_curr_out_filename.txt)
+          if [ -z "$FILENAME" ] ; then
+            echo "Error: ttk_curr_out_filename not set"
+            exit 1
+          fi
+          echo "outfile_name_ttk=$FILENAME"
+          echo "outfile_name_ttk=$FILENAME" >> "GITHUB_OUTPUT"
+          exit 0
+        else
+          exit 1
+        fi
     - name: Upload artifact for the defaults
       uses: actions/upload-artifact@v4
       with:
         name: "_out_tkinter_defaults__${{ matrix.os }}_${{ matrix.python-version }}"
-        path: "tkinter_defaults_curr.json"
+        path: |
+          tkinter_defaults_curr.json
+          ttk_defaults_curr.json
     - name: Upload artifact for merge step
       uses: actions/upload-artifact@v4
       with:
         name: zz_for_merge__${{ matrix.python-version }}_${{ matrix.os}}
         path: |
           tkinter_defaults_curr.json
+          ttk_defaults_curr.json
           curr_out_filename.txt
+          ttk_curr_out_filename.txt
   # Collect and commit results from the other runs
   commit-results:
     needs:
@@ -141,17 +190,27 @@ jobs:
         with:
           path: "./downloaded_artifacts"
           pattern: "zz_for_merge__*"
-      - name: Write downloaded artifacts to tkinter_defaults
+      - name: Write downloaded tkinter artifacts to tkinter_defaults
         run: python -m write_downloaded_artifacts
-      - name: Merge defaults
+      - name: Write downloaded ttk artifacts to ttk_defaults
+        run: python -m get_ttk_defaults.write_downloaded_ttk_artifacts
+      - name: Merge tkinter defaults
         run: python -m merge_defaults
+      - name: Merge ttk defaults
+        run: python -m get_ttk_defaults.merge_ttk_defaults
       - name: Check written files
         run: |
+          echo "tkinter_defaults/  :"
           ls tkinter_defaults
+          echo "merged_defaults/   :"
           ls merged_defaults
+          echo "ttk_defaults/  :"
+          ls ttk_defaults
+          echo "ttk_merged_defaults/   :"
+          ls ttk_merged_defaults
       - name: Upload defaults
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Upload defaults [bot]
           commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
-          file_pattern: "merged_defaults/*.json tkinter_defaults/*.json"
+          file_pattern: "merged_defaults/*.json tkinter_defaults/*.json ttk_defaults/*.json ttk_merged_defaults/*.json"
