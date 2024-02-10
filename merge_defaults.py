@@ -29,15 +29,15 @@ def merge_defaults():
     merged = merge_data(*_read_defaults().values())
     print('Writing detailed file')
     writefile_json(OUT_DIR / 'details.json', merged)
-    concise = _make_data_concise(merged)
+    concise = summarise_data_1(merged)
     print('Writing concise file')
     writefile_json(OUT_DIR / 'concise.json', concise)
-    concise_2 = _summarize_data_2(merged)
+    concise_2 = summarize_data_2(merged)
     print('Writing extra concise file')
     writefile_json(OUT_DIR / 'concise_2.json', concise_2)
 
 
-def _summarize_data_2(merged_data: dict[str, dict[str, JsonT]]) -> dict[str, dict[str, str]]:
+def summarize_data_2(merged_data: dict[str, dict[str, JsonT]]) -> dict[str, dict[str, str]]:
     return {
         name: {
             k: _summarize_w_val_2(v) for k, v in w_defaults.items()
@@ -52,7 +52,7 @@ def _summarize_w_val_2(v: T) -> T | str | None:
     return v
 
 
-def _make_data_concise(merged_data: dict[str, dict[str, T]]) -> dict[str, dict[str, T]]:
+def summarise_data_1(merged_data: dict[str, dict[str, T]]) -> dict[str, dict[str, T]]:
     return {
         name: {
             k: _summarise_w_val(v) for k, v in w_defaults.items()

@@ -1,12 +1,13 @@
 from __future__ import annotations
 
+import inspect
 import json
 import os
 import sys
 import tkinter
-from tkinter import TclError
 import _tkinter as tk_internal
-import inspect
+import tkinter.ttk as ttk
+from tkinter import TclError
 from typing import TextIO
 
 DEBUG = 1
@@ -39,18 +40,18 @@ def get_temp_root():
         debug(f'##[warn]WARN: Cannot initialize tkinter.Tk(): {e!s}')
         print(f'TclError in tkinter.Tk() constructor: {e!s}')
         # check if stuff works without a tk.Tk() instance
-        tkinter.Button()
+        tkinter.ttk.Button()
         return None
 
 
 def get_defaults():
     out = {}
     temp_root = get_temp_root()
-    for name in dir(tkinter):
+    for name in dir(ttk):
         if name.startswith('_'):
             debug(f'SKIP key {name!r}: private name', level=2)
             continue
-        if (value := getattr(tkinter, name, None)) is None:
+        if (value := getattr(ttk, name, None)) is None:
             debug(f'SKIP key {name!r}: not present or None')
             continue
         if not inspect.isclass(value):
@@ -60,15 +61,15 @@ def get_defaults():
             inst = value(temp_root)
         except (
                 NotImplementedError, ValueError, TypeError, AttributeError,
-                tkinter.TclError, RuntimeError) as e:
-            if isinstance(e, (tkinter.TclError, RuntimeError)):
+                TclError, RuntimeError) as e:
+            if isinstance(e, (TclError, RuntimeError)):
                 print(f'TclError in 1-arg __init__: _tkinter.TclError: {e!s}',
                       file=sys.stderr)
             debug(f'INFO key {name!r}: no 1-arg __init__')
             try:
                 inst = value()
             except (NotImplementedError, ValueError, TypeError, AttributeError, RuntimeError):
-                if isinstance(e, (tkinter.TclError, RuntimeError)):
+                if isinstance(e, (TclError, RuntimeError)):
                     print(f'TclError in 0-arg __init__: _tkinter.TclError: {e!s}',
                           file=sys.stderr)
                 debug(f'SKIP key {name!r}: '
@@ -102,7 +103,7 @@ def get_defaults():
         assert defaults is not None
         debug(f'Success key {name!r} (type={short_repr(value)}, '
               f'inst={short_repr(inst)}): defaults={short_repr(defaults, 40)}')
-        out[name] = defaults
+        out['ttk.' + name] = defaults
     if temp_root is not None:
         temp_root.destroy()
     return out
