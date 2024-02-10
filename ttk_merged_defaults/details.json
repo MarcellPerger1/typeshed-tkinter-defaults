@@ -4,10 +4,24 @@
     "command": "",
     "compound": "",
     "cursor": "",
-    "default": "normal",
+    "default": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "image": "",
     "padding": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "text": "",
@@ -24,7 +38,14 @@
     "offvalue": "0",
     "onvalue": "1",
     "padding": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "text": "",
@@ -38,14 +59,28 @@
     "class": "",
     "cursor": "",
     "exportselection": 1,
-    "font": "TkTextFont",
+    "font": [
+      "@typeDiff:2",
+      "TkTextFont",
+      [
+        "@Py_str",
+        "font"
+      ]
+    ],
     "foreground": "",
     "height": "10",
     "invalidcommand": "",
     "justify": "left",
     "postcommand": "",
     "show": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "textvariable": "",
@@ -58,14 +93,35 @@
   "ttk.Entry": {
     "background": "",
     "class": "",
-    "cursor": "ibeam",
+    "cursor": [
+      "@different:3",
+      [
+        "@Tcl_Obj: type=cursor, value=ibeam",
+        "@Tcl_Obj: type=cursor, value=xterm",
+        "ibeam"
+      ]
+    ],
     "exportselection": 1,
-    "font": "TkTextFont",
+    "font": [
+      "@typeDiff:2",
+      "TkTextFont",
+      [
+        "@Py_str",
+        "font"
+      ]
+    ],
     "foreground": "",
     "invalidcommand": "",
     "justify": "left",
     "show": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "textvariable": "",
@@ -78,15 +134,36 @@
     "borderwidth": "",
     "class": "",
     "cursor": "",
-    "height": "0",
+    "height": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "padding": "",
     "relief": "",
     "style": "",
     "takefocus": "",
-    "width": "0"
+    "width": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ]
   },
   "ttk.Label": {
-    "anchor": "",
+    "anchor": [
+      "@different:3",
+      [
+        "",
+        "@Tcl_Obj: type=index, value=w",
+        "w"
+      ]
+    ],
     "background": "",
     "borderwidth": "",
     "class": "",
@@ -95,10 +172,24 @@
     "font": "",
     "foreground": "",
     "image": "",
-    "justify": "",
+    "justify": [
+      "@different:3",
+      [
+        "",
+        "@Tcl_Obj: type=index, value=left",
+        "left"
+      ]
+    ],
     "padding": "",
     "relief": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "",
     "text": "",
@@ -111,7 +202,14 @@
     "borderwidth": "",
     "class": "",
     "cursor": "",
-    "height": "0",
+    "height": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "labelanchor": "nw",
     "labelwidget": "",
     "padding": "",
@@ -120,24 +218,52 @@
     "takefocus": "",
     "text": "",
     "underline": -1,
-    "width": "0"
+    "width": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ]
   },
   "ttk.LabeledScale": {
     "borderwidth": "",
     "class": "",
     "cursor": "",
-    "height": "0",
+    "height": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "padding": "",
     "relief": "",
     "style": "",
     "takefocus": "",
-    "width": "0"
+    "width": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ]
   },
   "ttk.Labelframe": {
     "borderwidth": "",
     "class": "",
     "cursor": "",
-    "height": "0",
+    "height": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "labelanchor": "nw",
     "labelwidget": "",
     "padding": "",
@@ -146,17 +272,38 @@
     "takefocus": "",
     "text": "",
     "underline": -1,
-    "width": "0"
+    "width": [
+      "@typeDiff:2",
+      "0",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ]
   },
   "ttk.Menubutton": {
     "class": "",
     "compound": "",
     "cursor": "",
-    "direction": "below",
+    "direction": [
+      "@typeDiff:2",
+      "below",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "image": "",
     "menu": "",
     "padding": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "text": "",
@@ -177,15 +324,35 @@
     "class": "",
     "compound": "",
     "cursor": "",
-    "direction": "below",
+    "direction": [
+      "@typeDiff:2",
+      "below",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "image": "",
     "menu": "@repr:<tkinter.Menu object .!optionmenu.!menu>",
     "padding": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "text": "",
-    "textvariable": "PY_VAR6",
+    "textvariable": [
+      "@different:2",
+      [
+        "PY_VAR1",
+        "PY_VAR6"
+      ]
+    ],
     "underline": -1,
     "width": ""
   },
@@ -193,7 +360,14 @@
     "class": "",
     "cursor": "",
     "height": 0,
-    "orient": "vertical",
+    "orient": [
+      "@typeDiff:2",
+      "vertical",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "",
     "width": 0
@@ -202,7 +376,14 @@
     "class": "",
     "cursor": "",
     "height": 0,
-    "orient": "vertical",
+    "orient": [
+      "@typeDiff:2",
+      "vertical",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "",
     "width": 0
@@ -210,10 +391,31 @@
   "ttk.Progressbar": {
     "class": "",
     "cursor": "",
-    "length": "100",
+    "length": [
+      "@typeDiff:2",
+      "100",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
     "maximum": 100,
-    "mode": "determinate",
-    "orient": "horizontal",
+    "mode": [
+      "@typeDiff:2",
+      "determinate",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
+    "orient": [
+      "@typeDiff:2",
+      "horizontal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "phase": 0,
     "style": "",
     "takefocus": "",
@@ -227,7 +429,14 @@
     "cursor": "",
     "image": "",
     "padding": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "text": "",
@@ -242,9 +451,30 @@
     "command": "",
     "cursor": "",
     "from": 0,
-    "length": "100",
-    "orient": "horizontal",
-    "state": "normal",
+    "length": [
+      "@typeDiff:2",
+      "100",
+      [
+        "@Py_str",
+        "pixel"
+      ]
+    ],
+    "orient": [
+      "@typeDiff:2",
+      "horizontal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "to": 1.0,
@@ -255,20 +485,41 @@
     "class": "",
     "command": "",
     "cursor": "",
-    "orient": "vertical",
+    "orient": [
+      "@typeDiff:2",
+      "vertical",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": ""
   },
   "ttk.Separator": {
     "class": "",
     "cursor": "",
-    "orient": "horizontal",
+    "orient": [
+      "@typeDiff:2",
+      "horizontal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": ""
   },
   "ttk.Sizegrip": {
     "class": "",
-    "cursor": "size_nw_se",
+    "cursor": [
+      "@different:3",
+      [
+        "",
+        "@Tcl_Obj: type=cursor, value=bottom_right_corner",
+        "size_nw_se"
+      ]
+    ],
     "style": "",
     "takefocus": ""
   },
@@ -278,7 +529,14 @@
     "command": "",
     "cursor": "",
     "exportselection": 1,
-    "font": "TkTextFont",
+    "font": [
+      "@typeDiff:2",
+      "TkTextFont",
+      [
+        "@Py_str",
+        "font"
+      ]
+    ],
     "foreground": "",
     "format": "",
     "from": 0,
@@ -286,7 +544,14 @@
     "invalidcommand": "",
     "justify": "left",
     "show": "",
-    "state": "normal",
+    "state": [
+      "@typeDiff:2",
+      "normal",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "style": "",
     "takefocus": "ttk::takefocus",
     "textvariable": "",
@@ -307,10 +572,26 @@
     ],
     "height": 10,
     "padding": "",
-    "selectmode": "extended",
+    "selectmode": [
+      "@typeDiff:2",
+      "extended",
+      [
+        "@Py_str",
+        "index"
+      ]
+    ],
     "show": [
-      "tree",
-      "headings"
+      "@different:2",
+      [
+        [
+          "@Tcl_Obj: type=index, value=tree",
+          "@Tcl_Obj: type=index, value=headings"
+        ],
+        [
+          "tree",
+          "headings"
+        ]
+      ]
     ],
     "style": "",
     "takefocus": "ttk::takefocus",
